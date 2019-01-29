@@ -2,3 +2,11 @@
     margin: 0px;
     padding: 0px;
 }
+
+#bg {
+    background-image: url("../assets/background.png") !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
