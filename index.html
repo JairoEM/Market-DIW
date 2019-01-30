@@ -42,6 +42,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Menu</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Book a Table</a>
+                </li>
                 <li class="nav-item dropdown">
                     <div class="d-none d-lg-block">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,8 +54,6 @@
                             <a class="dropdown-item" href="#">Galery</a>
                             <a class="dropdown-item" href="#">Comments</a>
                             <a class="dropdown-item" href="#">Location</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Book a Table</a>
                         </div>
                     </div>
                 </li>
@@ -65,22 +66,12 @@
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="#">Location</a>
                 </li>
-                <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="#">Book a Table</a>
-                </li>
             </ul>
 
             <!-- THAT BUTTON MAY HAVE THE OPTION TO CHANGE THE LANGUAGE -->
             <br>
             <a href="#" style="color:white;"><u>ENG</u></a> / <a href="#"style="color:white;"><u>ESP</u></a>
             <br>
-
-            <div class="col-auto col-dm-12">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
         </div>
     </nav>
 
@@ -88,26 +79,41 @@
   <div class="container-fluid" id="bg">
 
     <!-- INTRO -->
-    <section class="container" style="padding:30px 0; background-color: white;">
-        <div class="row">
+    <section class="container" style="padding:30px 0; background-color: rgba(255, 255, 255, 0.8);"> 
+        <div class="row d-none d-lg-block">
             <div class="col-12" style="text-align:center;">
-                <h1>Welcome to Green Town</h1>
-                <h2>Your new vegetarian restaurant</h2>
-            </div>
-            <div class="col-12" style="text-align:center;" >
-                <span><img src="./assets/images/burguerIntro.png" alt="" style="padding-top: 20px;" class="img-fluid animated zoomInDown"></span>
+                <h1 id="welcomeH1A">Welcome to Green Town</h1>
+                <h2 id="welcomeH2A">Your new vegetarian restaurant</h2>
             </div>
         </div>
+
+        <div class="row d-none d-md-block d-lg-none">
+            <div class="col-12" style="text-align:center;">
+                <h1 id="welcomeH1B">Welcome to Green Town</h1>
+                <h2 id="welcomeH2B">Your new vegetarian restaurant</h2>
+            </div>
+        </div>
+
+        <div class="row d-md-none">
+            <div class="col-12" style="text-align:center;">
+                <h1 id="welcomeH1C">Welcome to Green Town</h1>
+                <h2 id="welcomeH2C">Your new vegetarian restaurant</h2>
+            </div>
+        </div>
+
+        <!-- <div class="col-12" style="text-align:center;" >
+            <span><img src="./assets/images/burguerIntro.png" alt="" style="padding-top: 20px;" class="img-fluid animated zoomInDown"></span>
+        </div> -->
     </section>
 
-    <section class="container d-none d-lg-block" style="height: 300px;">
+    <section class="container d-none d-lg-block" style="height: 150px;">
         <!-- SPACE SECTION PC -->
     </section>
-    <section class="container d-lg-none" style="height: 150px;">
+    <section class="container d-lg-none" style="height: 100px;">
         <!-- SPACE SECTION TABLET AND MOBILE -->
     </section>
     
-    <section class="container" style="padding: 30px 0; background-color: white;">
+    <section class="container" style="padding: 30px 0; background-color: rgba(255, 255, 255, 0.8);">
         <div class="row align-items-center">
             <div class="col-12 col-lg-6 d-none d-lg-block">
                 <img src="./assets/images/tofu.jpg" alt="" class="img-fluid wow fadeInLeft" style="padding-left: 10px;">
@@ -142,20 +148,20 @@
         </div>
     </section>
 
-    <section class="container d-none d-lg-block" style="height: 300px;">
+    <section class="container d-none d-lg-block" style="height: 150px;">
         <!-- SPACE SECTION PC -->
     </section>
-    <section class="container d-lg-none" style="height: 150px;">
+    <section class="container d-lg-none" style="height: 100px;">
         <!-- SPACE SECTION TABLET AND MOBILE -->
     </section>
 
-    <section class="container" style="padding: 30px auto; background-color: white;">
+    <section class="container-fluid" style="background-color: rgba(255, 255, 255, 0); padding: 0;">
         <div class="row align-items-center d-none d-lg-block">
             <div class="thumbnail text-center">
                 <img src="./assets/images/bigBurguer.jpeg" alt="" class="img-fluid">
                 <div class="caption bg-warning">
                     <h2 style="padding:10px; margin: 0;">Enjoy our specialty</h2>
-                    <h1 class="wow pulse" style="padding:10px; margin: 0; font-size: 3em;">100% Vegan Burguers</h1>
+                    <h1 class="wow pulse" data-wow-delay="1s" style="padding:10px; margin: 0; font-size: 3em;">100% Vegan Burguers</h1>
                 </div>
             </div>
         </div>
@@ -167,7 +173,7 @@
                 </div>
                 <img src="./assets/images/bigBurguer.jpeg" alt="" class="img-fluid">
                 <div class="bg-warning" style="text-align: center;">
-                    <h1 class="wow pulse" style="padding:10px 0; margin: 0; font-size: 3em;">100% Vegan Burguers</h1>
+                    <h1 class="wow pulse" data-wow-delay="1s" style="padding:10px 0; margin: 0; font-size: 3em;">100% Vegan Burgers</h1>
                 </div>
             </div>
         </div>
@@ -179,12 +185,24 @@
     <section id="footer" class="bg-primary" style="padding: 20px;">
         <div class="container" style="padding: auto;">
             <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-auto">
+                <div class="col-12 col-lg-2" style="text-align:center; padding-bottom: 20px;">
                     <img src="./assets/greenTownBottom.png" style="height: 80px;" alt=""></span>
                 </div>
-                <div class="col-auto" style="text-align:center;">
-                    &copy; Green Town - Gastro Restaurant // 445 Mount Eden Road, Mount Eden, Auckland // ZIP 5022 // 
+                <div class="col-12 col-lg-6 offset-lg-1" style="text-align:center; padding-bottom: 20px;">
+                    &copy; Green Town - Gastro Restaurant
+                    <div class="w-100"></div>
+                    445 Mount Eden Road, Mount Eden, Auckland // ZIP 5022
+                    <div class="w-100"></div>
                     <span><img src="./assets/phone.svg" alt="" height="16px" width="auto"></span> (555) 555-1234
+                </div>
+                <div class="col-12 col-lg-2 offset-lg-1" style="text-align:center; padding-bottom: 20px;">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="./assets/twitter.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
+                            <img src="./assets/instagram.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
+                            <img src="./assets/facebook.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
