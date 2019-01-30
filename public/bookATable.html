@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="shortcut icon" href="./logoDark.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <title>Green Town</title>
+  </head>
+  <body>
+    <section id="header">
+        <div class="bg-primary" style="text-align: center; height: 120px;">
+            <img src="../assets/greenTownTop.png" alt="" style="padding: 20px 0;">
+        </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand" href="#">
+            <!-- <img src="./assets/logo.png" alt="" id="imgLogo" style="height:60px;"> -->
+            Green Town
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Book a Table</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <div class="d-none d-lg-block">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About us
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Galery</a>
+                            <a class="dropdown-item" href="#">Comments</a>
+                            <a class="dropdown-item" href="#">Location</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="#">Galery</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="#">Comments</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="#">Location</a>
+                </li>
+            </ul>
+
+            <!-- THAT BUTTON MAY HAVE THE OPTION TO CHANGE THE LANGUAGE -->
+            <br>
+            <a href="#" style="color:white;"><u>ENG</u></a> / <a href="#"style="color:white;"><u>ESP</u></a>
+            <br>
+        </div>
+    </nav>
+
+    <!-- DIV WITH BACKGROUNB IMAGE -->
+  <div class="container-fluid" id="bg">
+
+    <section class="container" style="padding:30px; background-color: rgba(255, 255, 255, 0.8);">
+        <div class="row">
+            <div class="col-lg-8 col-12">
+                <form>
+                    <div class="form-group">
+                        <label for="">Name of the reservation*</label>
+                        <input type="text" class="form-control required border rounded border-secondary" name="" id="" autofocus required placeholder="Enter name and surname" aria-describedby="nameHelp">
+                        <small id="nameHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email address*</label>
+                        <input type="email" class="form-control required border rounded border-secondary" pattern="^[a-zA-Z0-9/*-_.]{1,}[@][a-z]{1,}.com$" id="" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Phone number*</label>
+                        <input type="text" class="form-control required border rounded border-secondary" id="" aria-describedby="" placeholder="" pattern="^[0-9]{1,}$">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Hour of book*</label>
+                        <input type="time" class="form-control required border rounded border-secondary" id="" aria-describedby="" min="20:00" max="23:00">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Diners</label>
+                        <select class="form-control required border rounded border-secondary" id="">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>5</option>
+                            <option>10 or more</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Comments</label>
+                        <textarea class="form-control border rounded border-secondary" id="" rows="3" style="resize: none;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Booking</button>
+                </form>
+            </div>
+            <div class="offset-1 col-2 d-none d-lg-block" style="text-align:center; padding-top: 20px;" id>
+                <div id="thanksForm">
+                    <h3 style="opacity: 1;">Thanks for thinking about us</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+  </div>
+
+    <!-- FOOTER -->
+    <section id="footer" class="bg-primary" style="padding: 20px;">
+        <div class="container" style="padding: auto;">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-12 col-lg-2" style="text-align:center; padding-bottom: 20px;">
+                    <img src="../assets/greenTownBottom.png" style="height: 80px;" alt=""></span>
+                </div>
+                <div class="col-12 col-lg-6 offset-lg-1" style="text-align:center; padding-bottom: 20px;">
+                    &copy; Green Town - Gastro Restaurant
+                    <div class="w-100"></div>
+                    445 Mount Eden Road, Mount Eden, Auckland // ZIP 5022
+                    <div class="w-100"></div>
+                    <span><img src="../assets/phone.svg" alt="" height="16px" width="auto"></span> (555) 555-1234
+                </div>
+                <div class="col-12 col-lg-2 offset-lg-1" style="text-align:center; padding-bottom: 20px;">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="../assets/twitter.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
+                            <img src="../assets/instagram.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
+                            <img src="../assets/facebook.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <script src="../javascripts/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

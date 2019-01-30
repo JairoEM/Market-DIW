@@ -49,3 +49,31 @@ p {
 #welcomeH2C {
     font-size: 1.5rem !important;
 }
+
+form {
+    font-size: 1.1rem;
+}
+
+.form-group input, select {
+    height: 50px !important;
+}
+
+/* #thanksForm {
+    background-image: url("../assets/greyLogo.png") !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.5;
+} */
+
+#thanksForm:after {
+    content: "";
+    background: url("../assets/greyLogo.png") !important;
+    background-repeat: no-repeat !important;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;   
+}
