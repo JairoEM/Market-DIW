@@ -40,7 +40,7 @@
                     <a class="nav-link" href="#">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Book a Table</a>
+                    <a class="nav-link" href="./bookATable.html">Book a Table</a>
                 </li>
                 <li class="nav-item dropdown">
                     <div class="d-none d-lg-block">
@@ -50,7 +50,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Galery</a>
                             <a class="dropdown-item" href="./opinions.html">Opinions</a>
-                            <a class="dropdown-item" href="./location.html">Location</a>
+                            <a class="dropdown-item" href="">Location</a>
                         </div>
                     </div>
                 </li>
@@ -61,7 +61,7 @@
                     <a class="nav-link" href="./opinions.html">Opinions</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./location.html">Location</a>
+                    <a class="nav-link" href="">Location</a>
                 </li>
             </ul>
 
@@ -75,75 +75,48 @@
     <!-- DIV WITH BACKGROUNB IMAGE -->
   <div class="container-fluid" id="bg">
 
+    <!-- INTRO LOCATION -->
     <section class="container" id="whiteContainer">
-        <div class="row justify-content-center">
-            <div class="col-auto" id="contentWC">
-                <h1>Do you want to come?</h1>
-            </div>
-        </div>   
-        <div class="row">
-            <div class="col-lg-8 col-12">
-                <form id="contentWC">
-                    <div class="form-group">
-                        <label for="">Name of the reservation*</label>
-                        <input type="text" class="form-control required border rounded border-secondary" name="" id="" autofocus required placeholder="Name and surname" aria-describedby="nameHelp">
-                        <small id="nameHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Email address*</label>
-                        <input type="email" class="form-control required border rounded border-secondary" pattern="^[a-zA-Z0-9/*-_.]{1,}[@][a-z]{1,}.com$" id="" aria-describedby="emailHelp" placeholder="example@mail.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Phone number*</label>
-                        <input type="text" class="form-control required border rounded border-secondary" id="" aria-describedby="" placeholder="" pattern="^[0-9]{1,}$">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Hour of book*</label>
-                        <input type="time" class="form-control required border rounded border-secondary" id="" aria-describedby="" min="20:00" max="23:00">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Diners</label>
-                        <select class="form-control required border rounded border-secondary" id="">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>5</option>
-                            <option>10 or more</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Comments</label>
-                        <textarea class="form-control border rounded border-secondary" id="" rows="3" style="resize: none;"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Book your table</button>
-                </form>
-            </div>
-            <div class="offset-1 col-2 d-none d-lg-block" style="text-align:center; padding-top: 20px;">
-                <div id="thanksForm">
-                    <h3 style="opacity: 1;">Thanks for thinking about us</h3>
-                </div>
-                <div style="height: 50px;"></div>
-                <div>
-                    <p>
-                        We will confirm your order as soon as possible.
-                    </p>
-                </div>
-            </div>
-            <div class="col-12 d-block d-lg-none" style="text-align:center; padding-top: 30px;">
-                <div>
-                    <h5>
-                        We will confirm your order as soon as possible.
-                    </h5>
-                </div>
+        <div class="row justify-content-center" id="contentWC">
+            <div class="col-auto">
+                <h1>Where can you find us</h1>
             </div>
         </div>
+        <div id="contentWC" style="text-align: center;">
+            <p>
+                If you want to come and meet us, or would like to eat again 
+                at our restaurant, we are located at 445 Mount Eden Road, 
+                Mount Eden, Auckland, 100 meters from the Glifford art 
+                gallery and 500 meters from Mount Eden Summit.
+            </p>
+
+            <p>
+                Remember that you can also reserve your table at any time 
+                and for any occasion, in our "
+                <a href="./bookATable.html">book a table</a>" section. 
+            </p>
+
+            <p>
+                You can also contact us by phone 
+                <a href="tel: 00 64 9 123 4567">00 64 9 123 4567</a> 
+                or talk to us in our social networks              
+            </p>
+
+            <p>
+                <span><img src="../assets/twitterBlack.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"></span>
+                <span><img src="../assets/instagramBlack.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"></span>
+                <span><img src="../assets/facebookBlack.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"> </span> 
+            </p>
+        </div>
     </section>
-    
+
+    <!-- MAP -->
+    <section class="container-fluid" style="padding: 0; margin: 0;">
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.3401575068074!2d174.75979531571107!3d-36.88220997993183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4632b3e7d2c3%3A0xcccf9d03ee62e7f!2s445+Mount+Eden+Rd%2C+Mount+Eden%2C+Auckland+1024%2C+Nueva+Zelanda!5e0!3m2!1ses!2ses!4v1548937658200" 
+            width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
 
   </div>
 

@@ -50,7 +50,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Galery</a>
                             <a class="dropdown-item" href="">Comments</a>
-                            <a class="dropdown-item" href="#">Location</a>
+                            <a class="dropdown-item" href="./location.html">Location</a>
                         </div>
                     </div>
                 </li>
@@ -61,7 +61,7 @@
                     <a class="nav-link" href="">Comments</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="#">Location</a>
+                    <a class="nav-link" href="./location.html">Location</a>
                 </li>
             </ul>
 
@@ -75,12 +75,12 @@
     <!-- DIV WITH BACKGROUNB IMAGE -->
   <div class="container-fluid" id="bg">
 
-    <!-- INTRO COMMENTS -->
+    <!-- INTRO OPINIONS -->
     <section class="container" id="whiteContainer">
-        <div class="row" id="opinion">
-            <div class="col-12" id="contentWC">
+        <div class="row justify-content-center" id="opinion">
+            <div class="col-auto" id="contentWC">
                 <h1>In Green Town your opinion is very important</h1>
-            </div>
+            </div>            
             <div class="col-12">
                 <p style="font-size: 1.1rem;" id="contentWC">
                     Our commitment to the environment and animals, 
@@ -90,17 +90,17 @@
                     improve, which is what you liked the most...
                 </p>
             </div>
-            <div class="col-12" style="text-align:center;" >
+            <div class="col-auto">
                 <span><img src="../assets/images/peopleEating.jpg" alt="" class="img-fluid animated zoomInDown"></span>
             </div>
         </div>
     </section>
     
-    <!-- COMMENTS -->
+    <!-- OPINIONS -->
     <section class="container" id="whiteContainer">
         <div class="row" id="contentWC">
             <div class="col-12" id="opinion">
-                <h3>Comments from real customers</h3>
+                <h3>Opinions from real customers</h3>
                 <div id="separator"></div>
             </div>
             <div class="col-12 col-md-8 offset-md-4 col-lg-6 offset-lg-6">
@@ -137,6 +137,7 @@
             </div>
         </div>
 
+        <!-- GIVE US YOUR OPINION -->
         <div class="row">  
             <div class="col-12" id="opinion">
                 <h3>Give us your opinion</h3>
@@ -165,8 +166,40 @@
                         </div>
                     </div> 
                     <br>
-                    <div class="form-group">
+
+                    <!-- TEXT AREA PC -->
+                    <div class="d-none d-lg-block">      
+                        <div class="row justify-content-between">
+                            <div class="col-lg-9">
+                                <div class="form-group">
+                                    <textarea class="form-control border rounded border-secondary" id="" rows="3" style="resize: none;"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control required border rounded border-secondary" placeholder="Insert your payment ID">
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="row align-item-baseline">
+                                    <div class="col-12" style="padding: 10px 0;">
+                                        <img src="../assets/twitterBlack.svg" alt="" style="height: 40px; width: auto;">
+                                    </div>
+                                    <div class="col-12" style="padding: 10px 0;">
+                                        <img src="../assets/instagramBlack.svg" alt="" style="height: 40px; width: auto;">
+                                    </div>
+                                    <div class="col-12" style="padding: 10px 0;">
+                                        <img src="../assets/facebookBlack.svg" alt="" style="height: 40px; width: auto;">   
+                                    </div>
+                                </div>                                                         
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEXT AREA MOBILE AND TABLET -->
+                    <div class="form-group d-block d-lg-none">
                         <textarea class="form-control border rounded border-secondary" id="" rows="3" style="resize: none;"></textarea>
+                    </div>
+                    <div class="form-group d-block d-lg-none">
+                        <input type="text" class="form-control required border rounded border-secondary" placeholder="Insert your payment ID">
                     </div>
                     <button type="submit" class="btn btn-primary">Send us your opinion</button>
                 </form>
@@ -188,7 +221,7 @@
                     <div class="w-100"></div>
                     445 Mount Eden Road, Mount Eden, Auckland // ZIP 5022
                     <div class="w-100"></div>
-                    <span><img src="../assets/phone.svg" alt="" height="16px" width="auto"></span> (555) 555-1234
+                    <span><img src="../assets/phone.svg" alt="" height="16px" width="auto"></span> 00 64 9 123 4567
                 </div>
                 <div class="col-12 col-lg-2 offset-lg-1" style="text-align:center; padding-bottom: 20px;">
                     <div class="row">
