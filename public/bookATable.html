@@ -88,24 +88,25 @@
                 <form id="contentWC">
                     <div class="form-group">
                         <label for="">Name of the reservation*</label>
-                        <input type="text" class="form-control required border rounded border-secondary" name="" id="" autofocus required placeholder="Name and surname" aria-describedby="nameHelp">
+                        <input type="text" class="form-control required border rounded border-secondary" autofocus required placeholder="Name and surname" aria-describedby="nameHelp">
                         <small id="nameHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
                     </div>
                     <div class="form-group">
                         <label for="">Email address*</label>
-                        <input type="email" class="form-control required border rounded border-secondary" pattern="^[a-zA-Z0-9/*-_.]{1,}[@][a-z]{1,}.com$" id="" aria-describedby="emailHelp" placeholder="example@mail.com">
+                        <input type="email" class="form-control required border rounded border-secondary" required pattern="^[a-zA-Z0-9/*-_.]{1,}[@][a-z]{1,}.com$" placeholder="example@mail.com">
                     </div>
                     <div class="form-group">
                         <label for="">Phone number*</label>
-                        <input type="text" class="form-control required border rounded border-secondary" id="" aria-describedby="" placeholder="" pattern="^[0-9]{1,}$">
+                        <input type="text" class="form-control required border rounded border-secondary" required pattern="^[0-9]{1,}$">
                     </div>
                     <div class="form-group">
                         <label for="">Hour of book*</label>
-                        <input type="time" class="form-control required border rounded border-secondary" id="" aria-describedby="" min="20:00" max="23:00">
+                        <input type="time" class="form-control required border rounded border-secondary" required min="20:00" max="23:00" aria-describedby="hourHelp">
+                        <small id="hourHelp" class="form-text text-muted">You can book your table from 20:00 to 23:00.</small>
                     </div>
                     <div class="form-group">
                         <label for="">Diners</label>
-                        <select class="form-control required border rounded border-secondary" id="">
+                        <select class="form-control required border rounded border-secondary">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -120,7 +121,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Comments</label>
-                        <textarea class="form-control border rounded border-secondary" id="" rows="3" style="resize: none;"></textarea>
+                        <textarea class="form-control border rounded border-secondary" rows="3" style="resize: none;"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Book your table</button>
                 </form>
