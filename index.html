@@ -26,7 +26,7 @@
     </section>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="">
             <!-- <img src="./assets/logo.png" alt="" id="imgLogo" style="height:60px;"> -->
             Green Town
         </a>
@@ -36,14 +36,11 @@
 
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Book a Table</a>
+                    <a class="nav-link" href="./public/bookATable.html">Book a Table</a>
                 </li>
                 <li class="nav-item dropdown">
                     <div class="d-none d-lg-block">
@@ -52,7 +49,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Galery</a>
-                            <a class="dropdown-item" href="#">Comments</a>
+                            <a class="dropdown-item" href="./public/comments.html">Comments</a>
                             <a class="dropdown-item" href="#">Location</a>
                         </div>
                     </div>
@@ -61,7 +58,7 @@
                     <a class="nav-link" href="#">Galery</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="#">Comments</a>
+                    <a class="nav-link" href="./public/comments.html">Comments</a>
                 </li>
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="#">Location</a>
@@ -79,7 +76,7 @@
   <div class="container-fluid" id="bg">
 
     <!-- INTRO -->
-    <section class="container" style="padding:30px 0; background-color: rgba(255, 255, 255, 0.8);"> 
+    <section class="container" id="whiteContainer"> 
         <div class="row d-none d-lg-block">
             <div class="col-12" style="text-align:center;">
                 <h1 id="welcomeH1A">Welcome to Green Town</h1>
@@ -107,14 +104,14 @@
     </section>
 
     
-    <section class="container d-none d-lg-block" style="height: 150px;">
+    <section class="container d-none d-lg-block" id="spacePC">
         <!-- SPACE SECTION PC -->
     </section>
-    <section class="container d-lg-none" style="height: 100px;">
+    <section class="container d-lg-none" id="spaceMobile">
         <!-- SPACE SECTION TABLET AND MOBILE -->
     </section>
 
-    <section class="container-fluid" style="background-color: rgba(255, 255, 255, 0); padding: 0;">
+    <section class="container-fluid" style="padding: 0;">
         <div class="row align-items-center d-none d-md-block">
             <div class="thumbnail text-center">
                 <img src="./assets/images/bigBurger.png" alt="" class="img-fluid">
@@ -139,21 +136,21 @@
     </section>
 
 
-    <section class="container d-none d-lg-block" style="height: 150px;">
+    <section class="container d-none d-lg-block" id="spacePC">
         <!-- SPACE SECTION PC -->
     </section>
-    <section class="container d-lg-none" style="height: 100px;">
+    <section class="container d-lg-none" id="spaceMobile">
         <!-- SPACE SECTION TABLET AND MOBILE -->
     </section>
     
     
-    <section class="container" style="padding: 30px 0; background-color: rgba(255, 255, 255, 0.8);">
+    <section class="container" id="whiteContainer">
         <div class="row align-items-center">
             <div class="col-12 col-lg-6 d-none d-lg-block">
                 <img src="./assets/images/tofu.jpg" alt="" class="img-fluid wow fadeInLeft" style="padding-left: 10px;">
             </div>
             <div class="col-12 col-lg-6">
-                <p style="text-align:center; font-size: 1.5em; padding-left: 15px; padding-right: 15px;">
+                <p style="text-align:center; font-size: 1.5em;" id="contentWC">
                     Enjoy the 100% vegetarian food of the highest quality, in which, 
                     both the appearance and the taste, is our highest priority, to 
                     give you the maximum enjoyment.
@@ -170,7 +167,7 @@
         </div>
         <div class="row align-items-center">
             <div class="col-12 col-lg-6">
-                    <p style="text-align:center; font-size: 1.5em; padding-left: 15px; padding-right: 15px;">
+                    <p style="text-align:center; font-size: 1.5em;" id="contentWC">
                         Come with your friends or your family. We like to see you enjoy 
                         and share with us special moments in the company of whoever 
                         matters most to you.

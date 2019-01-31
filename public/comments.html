@@ -40,7 +40,7 @@
                     <a class="nav-link" href="#">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Book a Table</a>
+                    <a class="nav-link" href="./bookATable.html">Book a Table</a>
                 </li>
                 <li class="nav-item dropdown">
                     <div class="d-none d-lg-block">
@@ -49,7 +49,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Galery</a>
-                            <a class="dropdown-item" href="./comments.html">Comments</a>
+                            <a class="dropdown-item" href="">Comments</a>
                             <a class="dropdown-item" href="#">Location</a>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                     <a class="nav-link" href="#">Galery</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./comments.html">Comments</a>
+                    <a class="nav-link" href="">Comments</a>
                 </li>
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="#">Location</a>
@@ -75,70 +75,104 @@
     <!-- DIV WITH BACKGROUNB IMAGE -->
   <div class="container-fluid" id="bg">
 
+    <!-- INTRO COMMENTS -->
     <section class="container" id="whiteContainer">
-        <div class="row">
-            <div class="col-lg-8 col-12">
-                <form id="contentWC">
-                    <div class="form-group">
-                        <label for="">Name of the reservation*</label>
-                        <input type="text" class="form-control required border rounded border-secondary" name="" id="" autofocus required placeholder="Name and surname" aria-describedby="nameHelp">
-                        <small id="nameHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Email address*</label>
-                        <input type="email" class="form-control required border rounded border-secondary" pattern="^[a-zA-Z0-9/*-_.]{1,}[@][a-z]{1,}.com$" id="" aria-describedby="emailHelp" placeholder="example@mail.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Phone number*</label>
-                        <input type="text" class="form-control required border rounded border-secondary" id="" aria-describedby="" placeholder="" pattern="^[0-9]{1,}$">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Hour of book*</label>
-                        <input type="time" class="form-control required border rounded border-secondary" id="" aria-describedby="" min="20:00" max="23:00">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Diners</label>
-                        <select class="form-control required border rounded border-secondary" id="">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>5</option>
-                            <option>10 or more</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Comments</label>
-                        <textarea class="form-control border rounded border-secondary" id="" rows="3" style="resize: none;"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Book your table</button>
-                </form>
+        <div class="row" id="opinion">
+            <div class="col-12" id="contentWC">
+                <h1>In Green Town your opinion is very important</h1>
             </div>
-            <div class="offset-1 col-2 d-none d-lg-block" style="text-align:center; padding-top: 20px;">
-                <div id="thanksForm">
-                    <h3 style="opacity: 1;">Thanks for thinking about us</h3>
-                </div>
-                <div style="height: 50px;"></div>
-                <div>
-                    <p>
-                        We will confirm the order as soon as possible.
-                    </p>
-                </div>
+            <div class="col-12">
+                <p style="font-size: 1.1rem;" id="contentWC">
+                    Our commitment to the environment and animals, 
+                    would be nothing without you. We wanted to thank 
+                    you for your visit, and we would love you to leave 
+                    us a comment about your experience, which we could 
+                    improve, which is what you liked the most...
+                </p>
             </div>
-            <div class="col-12 d-block d-lg-none" style="text-align:center; padding-top: 30px;">
-                <div>
-                    <h5>
-                        We will confirm the order as soon as possible.
-                    </h5>
-                </div>
+            <div class="col-12" style="text-align:center;" >
+                <span><img src="../assets/images/peopleEating.jpg" alt="" class="img-fluid animated zoomInDown"></span>
             </div>
         </div>
     </section>
     
+    <!-- COMMENTS -->
+    <section class="container" id="whiteContainer">
+        <div class="row" id="contentWC">
+            <div class="col-12" id="opinion">
+                <h3>Comments from real customers</h3>
+                <div id="separator"></div>
+            </div>
+            <div class="col-12 col-md-8 offset-md-4 col-lg-6 offset-lg-6">
+                <p><i>
+                    "We do not usually eat vegan food and the truth is that not 
+                    only does it not show the difference in terms of texture, 
+                    but even in the taste it can taste as good or even better 
+                    than a normal hamburger. I wish I could have gone with my dog."
+                </i></p>
+                <span>
+                    <img src="../assets/fullStar.svg" alt="" id="stars">
+                    <img src="../assets/fullStar.svg" alt="" id="stars">
+                    <img src="../assets/fullStar.svg" alt="" id="stars">
+                    <img src="../assets/fullStar.svg" alt="" id="stars">
+                    <img src="../assets/halfStar.svg" alt="" id="stars">
+                </span>
+                <p id="commentName">John Wick</p>
+            </div>
+            <div class="col-12 col-md-8 col-lg-6">
+                <p><i>
+                    "Even though they do not have mead or mutton from the 
+                    Blue Mountains, the food was delicious. I brought the 
+                    company of the Ring to eat and even Legolas the repipi 
+                    enjoyed like a dwarf hahaha."
+                </i></p>
+                <span>
+                    <img src="../assets/fullStar.svg" alt="" id="stars">
+                    <img src="../assets/fullStar.svg" alt="" id="stars">
+                    <img src="../assets/fullStar.svg" alt="" id="stars">
+                    <img src="../assets/fullStar.svg" alt="" id="stars">
+                    <img src="../assets/fullStar.svg" alt="" id="stars">
+                </span>
+                <p id="commentName">Gimli</p>
+            </div>
+        </div>
+
+        <div class="row">  
+            <div class="col-12" id="opinion">
+                <h3>Give us your opinion</h3>
+                <div id="separator"></div>
+            </div>
+            <div class="col-12">
+                <form id="contentWC">
+                    <div class="row">
+                        <div class="form-check col-12 col-lg-6">
+                            <label class="form-check-label" style="padding-left: 20px;">
+                                <input class="form-check-input" type="checkbox">
+                                Would you like your comment to have shown?
+                            </label>
+                        </div>
+                        <div class="d-block d-lg-none" style="padding: 10px;"></div>
+                        <div class="form-check col-12 col-lg-6 d-flex align-items-center">
+                            <label for="">
+                                <span>
+                                    <img src="../assets/emptyStar.svg" alt="" id="stars">
+                                    <img src="../assets/emptyStar.svg" alt="" id="stars">
+                                    <img src="../assets/emptyStar.svg" alt="" id="stars">
+                                    <img src="../assets/emptyStar.svg" alt="" id="stars">
+                                    <img src="../assets/emptyStar.svg" alt="" id="stars">
+                                </span>
+                            </label>
+                        </div>
+                    </div> 
+                    <br>
+                    <div class="form-group">
+                        <textarea class="form-control border rounded border-secondary" id="" rows="3" style="resize: none;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send us your opinion</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
   </div>
 
