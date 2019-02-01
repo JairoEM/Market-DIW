@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="shortcut icon" href="./logoDark.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <title>Green Town</title>
+  </head>
+  <body>
+    <section id="header">
+        <div class="bg-primary" style="text-align: center; height: 120px;">
+            <img src="../assets/greenTownTop.png" alt="" style="padding: 20px 0;">
+        </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand" href="../index.html">
+            <!-- <img src="./assets/logo.png" alt="" id="imgLogo" style="height:60px;"> -->
+            Green Town
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./bookATable.html">Book a Table</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <div class="d-none d-lg-block">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About us
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="./gallery.html">Gallery</a>
+                            <a class="dropdown-item" href="./opinions.html">Opinions</a>
+                            <a class="dropdown-item" href="./location.html">Location</a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- NAVBAR ITEMS FOR MOBILE AND TABLET -->
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="./gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="./opinions.html">Opinions</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="./location.html">Location</a>
+                </li>
+            </ul>
+
+            <!-- THAT BUTTON MAY HAVE THE OPTION TO CHANGE THE LANGUAGE -->
+            <br>
+            <a href="#" style="color:white;"><u>ENG</u></a> / <a href="#"style="color:white;"><u>ESP</u></a>
+            <br>
+        </div>
+    </nav>
+
+    <!-- DIV WITH BACKGROUNB IMAGE -->
+  <div class="container-fluid" id="bg">
+
+    <!-- INTRO MENU -->
+    <section class="container" id="whiteContainer" style="padding-bottom: 0;">
+        <div class="row justify-content-center" id="contentWC">
+            <div class="col-auto" style="text-align: center;">
+                <h1>Our Menu</h1>
+            </div>
+        </div>
+        <div id="contentWC" style="text-align: center;">
+            <p>
+                Our menu is completely made with products not from animal meat. 
+                Although it is true that it is a vegetarian restaurant, you will 
+                find a wide variety of vegan products, including our specialty, 
+                the vegan burger. Remember that, if you need it, you can check 
+                with us the possible allergens that may be found in your food.
+            </p>
+        </div>
+    </section>
+    <!-- BURGER -->
+    <section class="container" id="whiteContainer" style="padding-bottom: 20px; padding-top: 0; text-align:center;">
+        <div class="row">
+            <div class="col-12">
+                <span><img src="../assets/images/burguerIntro.png" alt="" class="img-fluid wow fadeIn"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="container d-none d-lg-block" id="spacePC">
+        <!-- SPACE SECTION PC -->
+    </section>
+    <section class="container d-lg-none" id="spaceMobile">
+        <!-- SPACE SECTION TABLET AND MOBILE -->
+    </section>
+    
+    <!-- MENU -->
+    <section class="container" id="whiteContainer">
+        <!-- ENTRANTS -->
+        <div class="row" id="contentWC">
+            <div class="col-12" id="centerText">
+                <h3>Entrants</h3>
+            </div>
+            <div class="col-lg-6 col-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="bigCell">Dish</th>
+                            <th scope="col" id="smallCell">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-dark">
+                            <td>Ceasar Salad (with Tofu)</td>
+                            <td>14</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Fruit and Vegetables Salad</td>
+                            <td>14.50</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Gazpacho (Spanish Dish)</td>
+                            <td>8</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Zucchini Tots</td>
+                            <td>12</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Vegan "Quesadilla"</td>
+                            <td>16</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Potato Chips (House Sauce)</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <div class="col-lg-6 col-12 align-self-center">
+                <img src="../assets/images/salad.jpg" alt="" class="img-fluid" id="imgMenu">
+            </div>
+        </div>
+    </section>
+
+    <section class="container d-none d-lg-block" id="spacePC">
+        <!-- SPACE SECTION PC -->
+    </section>
+    <section class="container d-lg-none" id="spaceMobile">
+        <!-- SPACE SECTION TABLET AND MOBILE -->
+    </section>
+
+    <section class="container" id="whiteContainer">
+        <!-- MAIN DISHES -->
+        <div class="row" id="contentWC">
+            <div class="col-12" id="centerText">
+                <h3>Main Dishes</h3>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block align-self-center">
+                <img src="../assets/images/kebabs.jpeg" alt="" class="img-fluid" id="imgMenu">
+            </div>
+            <div class="col-lg-6 col-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="bigCell">Dish</th>
+                            <th scope="col" id="smallCell">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-dark">
+                            <td>Thai Citrus Tofu Kebabs</td>
+                            <td>14</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Fried Tofu</td>
+                            <td>12.50</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Comforting Leek Risotto</td>
+                            <td>14</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Creamy Asparagus Risotto</td>
+                            <td>12</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Fiery Dragon Noodles</td>
+                            <td>15</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Mexican Vegetable Tacos</td>
+                            <td>18.50</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <div class="col-12 d-lg-none d-block align-self-center">
+                <img src="../assets/images/kebabs.jpeg" alt="" class="img-fluid" id="imgMenu">
+            </div>
+        </div>
+    </section>
+
+    <section class="container d-none d-lg-block" id="spacePC">
+        <!-- SPACE SECTION PC -->
+    </section>
+    <section class="container d-lg-none" id="spaceMobile">
+        <!-- SPACE SECTION TABLET AND MOBILE -->
+    </section>
+
+    <section class="container" id="whiteContainer">
+        <!-- SIDE DISHES -->
+        <div class="row" id="contentWC">
+            <div class="col-12" id="centerText">
+                <h3>Side Dishes</h3>
+            </div>
+            <div class="col-lg-6 col-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="bigCell">Dish</th>
+                            <th scope="col" id="smallCell">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-dark">
+                            <td>Eggplant Curry</td>
+                            <td>18.50</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Vegetables and Fruit Sushi</td>
+                            <td>22</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Stuffed Bell Peppers</td>
+                            <td>19</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Pizza Pronto (Vegan Pizza)</td>
+                            <td>16</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Pizza Five Cheese</td>
+                            <td>16</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Ricotta and Zucchini Cannelloni</td>
+                            <td>17.50</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <div class="col-lg-6 col-12 align-self-center">
+                <img src="../assets/images/eggplant.jpg" alt="" class="img-fluid" id="imgMenu">
+            </div>
+        </div>
+    </section>
+
+    <section class="container d-none d-lg-block" id="spacePC">
+        <!-- SPACE SECTION PC -->
+    </section>
+    <section class="container d-lg-none" id="spaceMobile">
+        <!-- SPACE SECTION TABLET AND MOBILE -->
+    </section>
+
+    <section class="container" id="whiteContainer">
+        <!-- BURGERS -->
+        <div class="row" id="contentWC">
+            <div class="col-12" id="centerText">
+                <h3>Vegan Burgers</h3>
+                <p>Chose what kind of bread you like the most! Normal, chickpea, bean or pumpkin bread!</p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block align-self-center" id="textCenter">
+                <img src="../assets/images/soybeans.jpg" alt="" class="img-fluid" id="imgMenu">
+            </div>
+            <div class="col-lg-6 col-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="bigCell">Dish</th>
+                            <th scope="col" id="smallCell">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-dark">
+                            <td>Textured Soybeans Burger</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Eggplant Burger</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Zucchini Burger</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Tofu Burger</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Lentils Burger</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Mushroom Burger</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <div class="col-12 d-lg-none d-block align-self-center">
+                <img src="../assets/images/soybeans.jpg" alt="" class="img-fluid center-block" id="imgMenu">
+            </div>
+        </div>
+    </section>
+
+    <section class="container d-none d-lg-block" id="spacePC">
+        <!-- SPACE SECTION PC -->
+    </section>
+    <section class="container d-lg-none" id="spaceMobile">
+        <!-- SPACE SECTION TABLET AND MOBILE -->
+    </section>
+
+    <section class="container" id="whiteContainer">
+        <!-- DESSERTS -->
+        <div class="row" id="contentWC">
+            <div class="col-12" id="centerText">
+                <h3>Desserts</h3>
+            </div>
+            <div class="col-lg-6 col-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="bigCell">Dish</th>
+                            <th scope="col" id="smallCell">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-dark">
+                            <td>Mineral Water 2l.</td>
+                            <td>2.50</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Refreshments 500ml.</td>
+                            <td>3</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Juices</td>
+                            <td>2.50</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>National Wine/Beer</td>
+                            <td>3</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Imported Wine/Beer</td>
+                            <td>-</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Vegan Liquor Shots</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <div class="col-lg-6 col-12 align-self-center">
+                <img src="../assets/images/cupcake.jpg" alt="" class="img-fluid" id="imgMenu">
+            </div>
+        </div>
+    </section>
+
+    <section class="container d-none d-lg-block" id="spacePC">
+        <!-- SPACE SECTION PC -->
+    </section>
+    <section class="container d-lg-none" id="spaceMobile">
+        <!-- SPACE SECTION TABLET AND MOBILE -->
+    </section>
+
+    <section class="container" id="whiteContainer">
+        <!-- DRINKS -->
+        <div class="row" id="contentWC">
+            <div class="col-12" id="centerText">
+                <h3>Drinks</h3>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block align-self-center" id="textCenter">
+                <img src="../assets/images/drink.jpg" alt="" class="img-fluid" id="imgMenu">
+            </div>
+            <div class="col-lg-6 col-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="bigCell">Drink</th>
+                            <th scope="col" id="smallCell">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-dark">
+                            <td>Textured Soybeans Burger</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Eggplant Burger</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Zucchini Burger</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Tofu Burger</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Lentils Burger</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Mushroom Burger</td>
+                            <td>20</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <div class="col-12 d-lg-none d-block align-self-center">
+                <img src="../assets/images/drink.jpg" alt="" class="img-fluid center-block" id="imgMenu">
+            </div>
+        </div>
+    </section>
+        
+</section>
+
+  </div>
+
+    <!-- FOOTER -->
+    <section id="footer" class="bg-primary" style="padding: 20px;">
+        <div class="container" style="padding: auto;">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="col-12 col-lg-2" style="padding-bottom: 20px;" id="centerText">
+                    <img src="../assets/greenTownBottom.png" style="height: 80px;" alt=""></span>
+                </div>
+                <div class="col-12 col-lg-6 offset-lg-1" style="padding-bottom: 20px;" id="centerText">
+                    &copy; Green Town - Gastro Restaurant
+                    <div class="w-100"></div>
+                    445 Mount Eden Road, Mount Eden, Auckland // ZIP 5022
+                    <div class="w-100"></div>
+                    <span><img src="../assets/phone.svg" alt="" height="16px" width="auto"></span> 00 64 9 123 4567
+                </div>
+                <div class="col-12 col-lg-2 offset-lg-1" style="padding-bottom: 20px;" id="centerText">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="../assets/twitter.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
+                            <img src="../assets/instagram.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
+                            <img src="../assets/facebook.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <script src="../javascripts/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

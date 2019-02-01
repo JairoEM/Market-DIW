@@ -50,14 +50,6 @@ form {
     height: 50px !important;
 }
 
-/* #thanksForm {
-    background-image: url("../assets/greyLogo.png") !important;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    opacity: 0.5;
-} */
-
 #thanksForm:after {
     content: "";
     background: url("../assets/greyLogo.png") !important;
@@ -113,8 +105,23 @@ form {
     margin-bottom: 20px;
 }
 
-/* iframe {
-    border: 0;
-    padding: 0 -20px; 
-    margin: 0 -20px;
-} */
+#centerText {
+    text-align: center;
+}
+
+#bigCell {
+    width: 75%;
+}
+
+#smallCell {
+    width: 25%;
+}
+
+td {
+    color: black !important;
+}
+
+#imgMenu {
+    margin: auto !important;
+    display: block !important;
+}

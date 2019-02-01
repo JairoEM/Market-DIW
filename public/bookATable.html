@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Menu</a>
+                    <a class="nav-link" href="./menu.html">Menu</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">Book a Table</a>
@@ -78,8 +78,8 @@
   <div class="container-fluid" id="bg">
 
     <section class="container" id="whiteContainer">
-        <div class="row justify-content-center">
-            <div class="col-auto" id="contentWC" style="text-align: center;">
+        <div class="row justify-content-center" id="contentWC">
+            <div class="col-auto" id="centerText">
                 <h1>Do you want to come?</h1>
             </div>
         </div>   
@@ -123,7 +123,32 @@
                         <label for="">Comments</label>
                         <textarea class="form-control border rounded border-secondary" rows="3" style="resize: none;"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Book your table</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Book your table</button>
+
+                    <!-- MODAL -->        
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Book your table</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    If you are sure that you want to book a table, please click on "Book" button. 
+                                    If you want to deny your reservation, please click on "Back" button. 
+                                    Remember that we will confirm your reservation as soon as possible.
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                                <button type="submit" class="btn btn-primary">Book</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
 
@@ -135,7 +160,7 @@
                 <div style="height: 50px;"></div>
                 <div>
                     <p>
-                        We will confirm your order as soon as possible.
+                        We will confirm your reservation as soon as possible.
                     </p>
                 </div>
             </div>
@@ -144,13 +169,12 @@
             <div class="col-12 d-block d-lg-none" style="text-align:center; padding-top: 30px;">
                 <div id="contentWC">
                     <h5>
-                        We will confirm your order as soon as possible
+                        We will confirm your reservation as soon as possible
                     </h5>
                 </div>
             </div>
         </div>
-    </section>
-    
+    </section>    
 
   </div>
 
@@ -158,17 +182,17 @@
     <section id="footer" class="bg-primary" style="padding: 20px;">
         <div class="container" style="padding: auto;">
             <div class="row d-flex align-items-center justify-content-center">
-                <div class="col-12 col-lg-2" style="text-align:center; padding-bottom: 20px;">
+                <div class="col-12 col-lg-2" style="padding-bottom: 20px;" id="centerText">
                     <img src="../assets/greenTownBottom.png" style="height: 80px;" alt=""></span>
                 </div>
-                <div class="col-12 col-lg-6 offset-lg-1" style="text-align:center; padding-bottom: 20px;">
+                <div class="col-12 col-lg-6 offset-lg-1" style="padding-bottom: 20px;" id="centerText">
                     &copy; Green Town - Gastro Restaurant
                     <div class="w-100"></div>
                     445 Mount Eden Road, Mount Eden, Auckland // ZIP 5022
                     <div class="w-100"></div>
                     <span><img src="../assets/phone.svg" alt="" height="16px" width="auto"></span> 00 64 9 123 4567
                 </div>
-                <div class="col-12 col-lg-2 offset-lg-1" style="text-align:center; padding-bottom: 20px;">
+                <div class="col-12 col-lg-2 offset-lg-1" style="padding-bottom: 20px;" id="centerText">
                     <div class="row">
                         <div class="col-12">
                             <img src="../assets/twitter.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
