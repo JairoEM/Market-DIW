@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="">Menu</a>
+                    <a class="nav-link breadcrumb-item active" href="">Menu</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./bookATable.html">Book a Table</a>
@@ -92,13 +92,35 @@
                 the vegan burger. Remember that, if you need it, you can check 
                 with us the possible allergens that may be found in your food.
             </p>
+            <br>
+            <h3>Categories</h3>
+            <div class="list-group">
+                <a href="#entrants" class="list-group-item list-group-item-action">
+                    Entrants
+                </a>
+                <a href="#mainDishes" class="list-group-item list-group-item-action">
+                    Main Dishes
+                </a>
+                <a href="#sideDishes" class="list-group-item list-group-item-action">
+                    Side Dishes
+                </a>
+                <a href="#veganBurgers" class="list-group-item list-group-item-action">
+                    Vegan Burgers
+                </a>
+                <a href="#desserts" class="list-group-item list-group-item-action">
+                    Desserts
+                </a>
+                <a href="#drinks" class="list-group-item list-group-item-action">
+                    Drinks
+                </a>
+            </div>
         </div>
     </section>
     <!-- BURGER -->
-    <section class="container" id="whiteContainer" style="padding-bottom: 20px; padding-top: 0; text-align:center;">
+    <section class="container" id="whiteContainer" style="padding-bottom: 40px; padding-top: 20px; text-align:center;">
         <div class="row">
             <div class="col-12">
-                <span><img src="../assets/images/burguerIntro.png" alt="" class="img-fluid wow fadeIn"></span>
+                <span><img src="../assets/images/burguerIntro.png" alt="" class="img-fluid wow fadeInUp"></span>
             </div>
         </div>
     </section>
@@ -111,6 +133,7 @@
     </section>
     
     <!-- MENU -->
+    <a name="entrants"></a>
     <section class="container" id="whiteContainer">
         <!-- ENTRANTS -->
         <div class="row" id="contentWC">
@@ -153,8 +176,8 @@
                     </tbody>
                 </table> 
             </div>
-            <div class="col-lg-6 col-12 align-self-center">
-                <img src="../assets/images/salad.jpg" alt="" class="img-fluid" id="imgMenu">
+            <div class="col-lg-6 d-none d-lg-block align-self-center">
+                <img src="../assets/images/salad.jpg" alt="" class="img-fluid wow fadeInRight" id="imgMenu">
             </div>
         </div>
     </section>
@@ -166,6 +189,7 @@
         <!-- SPACE SECTION TABLET AND MOBILE -->
     </section>
 
+    <a name="mainDishes"></a>
     <section class="container" id="whiteContainer">
         <!-- MAIN DISHES -->
         <div class="row" id="contentWC">
@@ -173,7 +197,7 @@
                 <h3>Main Dishes</h3>
             </div>
             <div class="col-lg-6 d-none d-lg-block align-self-center">
-                <img src="../assets/images/kebabs.jpeg" alt="" class="img-fluid" id="imgMenu">
+                <img src="../assets/images/kebabs.jpeg" alt="" class="img-fluid wow fadeInLeft" id="imgMenu">
             </div>
             <div class="col-lg-6 col-12">
                 <table class="table table-hover">
@@ -211,9 +235,6 @@
                     </tbody>
                 </table> 
             </div>
-            <div class="col-12 d-lg-none d-block align-self-center">
-                <img src="../assets/images/kebabs.jpeg" alt="" class="img-fluid" id="imgMenu">
-            </div>
         </div>
     </section>
 
@@ -224,6 +245,7 @@
         <!-- SPACE SECTION TABLET AND MOBILE -->
     </section>
 
+    <a name="sideDishes"></a>
     <section class="container" id="whiteContainer">
         <!-- SIDE DISHES -->
         <div class="row" id="contentWC">
@@ -266,8 +288,8 @@
                     </tbody>
                 </table> 
             </div>
-            <div class="col-lg-6 col-12 align-self-center">
-                <img src="../assets/images/eggplant.jpg" alt="" class="img-fluid" id="imgMenu">
+            <div class="col-lg-6 d-none d-lg-block align-self-center">
+                <img src="../assets/images/eggplant.jpg" alt="" class="img-fluid wow fadeInRight" id="imgMenu">
             </div>
         </div>
     </section>
@@ -275,19 +297,21 @@
     <section class="container d-none d-lg-block" id="spacePC">
         <!-- SPACE SECTION PC -->
     </section>
+    
     <section class="container d-lg-none" id="spaceMobile">
         <!-- SPACE SECTION TABLET AND MOBILE -->
     </section>
 
+    <a name="veganBurgers"></a>
     <section class="container" id="whiteContainer">
         <!-- BURGERS -->
         <div class="row" id="contentWC">
-            <div class="col-12" id="centerText">
+            <div class="col-12" id="centerText" >
                 <h3>Vegan Burgers</h3>
                 <p>Chose what kind of bread you like the most! Normal, chickpea, bean or pumpkin bread!</p>
             </div>
             <div class="col-lg-6 d-none d-lg-block align-self-center" id="textCenter">
-                <img src="../assets/images/soybeans.jpg" alt="" class="img-fluid" id="imgMenu">
+                <img src="../assets/images/soybeans.jpg" alt="" class="img-fluid wow fadeInLeft" id="imgMenu">
             </div>
             <div class="col-lg-6 col-12">
                 <table class="table table-hover">
@@ -325,8 +349,61 @@
                     </tbody>
                 </table> 
             </div>
-            <div class="col-12 d-lg-none d-block align-self-center">
-                <img src="../assets/images/soybeans.jpg" alt="" class="img-fluid center-block" id="imgMenu">
+        </div>
+    </section>
+
+    <section class="container d-none d-lg-block" id="spacePC">
+        <!-- SPACE SECTION PC -->
+    </section>
+    <section class="container d-lg-none" id="spaceMobile">
+        <!-- SPACE SECTION TABLET AND MOBILE -->
+    </section>
+
+    <a name="desserts"></a>
+    <section class="container" id="whiteContainer">
+        <!-- DESSERTS -->
+        <div class="row" id="contentWC">
+            <div class="col-12" id="centerText">
+                <h3>Desserts</h3>
+            </div>
+            <div class="col-lg-6 col-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="bigCell">Dish</th>
+                            <th scope="col" id="smallCell">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-dark">
+                            <td>Vegan Chocolate Cupcake</td>
+                            <td>5</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Buttercap and Chocolate Big Cookie</td>
+                            <td>5</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Vegan Strawberry Cheesecake</td>
+                            <td>6</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Carrot Pie</td>
+                            <td>4</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Apple Pie</td>
+                            <td>4</td>
+                        </tr>
+                        <tr class="table-dark">
+                            <td>Chocolate Chip Banana Bread</td>
+                            <td>4.50</td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            <div class="col-lg-6 d-none d-lg-block align-self-center">
+                <img src="../assets/images/cupcake.jpg" alt="" class="img-fluid wow fadeInRight" id="imgMenu">
             </div>
         </div>
     </section>
@@ -338,11 +415,15 @@
         <!-- SPACE SECTION TABLET AND MOBILE -->
     </section>
 
+    <a name="drinks"></a>
     <section class="container" id="whiteContainer">
-        <!-- DESSERTS -->
+        <!-- DRINKS -->
         <div class="row" id="contentWC">
             <div class="col-12" id="centerText">
-                <h3>Desserts</h3>
+                <h3>Drinks</h3>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block align-self-center" id="textCenter">
+                <img src="../assets/images/drink.jpg" alt="" class="img-fluid wow fadeInLeft" id="imgMenu">
             </div>
             <div class="col-lg-6 col-12">
                 <table class="table table-hover">
@@ -379,67 +460,6 @@
                         </tr>
                     </tbody>
                 </table> 
-            </div>
-            <div class="col-lg-6 col-12 align-self-center">
-                <img src="../assets/images/cupcake.jpg" alt="" class="img-fluid" id="imgMenu">
-            </div>
-        </div>
-    </section>
-
-    <section class="container d-none d-lg-block" id="spacePC">
-        <!-- SPACE SECTION PC -->
-    </section>
-    <section class="container d-lg-none" id="spaceMobile">
-        <!-- SPACE SECTION TABLET AND MOBILE -->
-    </section>
-
-    <section class="container" id="whiteContainer">
-        <!-- DRINKS -->
-        <div class="row" id="contentWC">
-            <div class="col-12" id="centerText">
-                <h3>Drinks</h3>
-            </div>
-            <div class="col-lg-6 d-none d-lg-block align-self-center" id="textCenter">
-                <img src="../assets/images/drink.jpg" alt="" class="img-fluid" id="imgMenu">
-            </div>
-            <div class="col-lg-6 col-12">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col" id="bigCell">Drink</th>
-                            <th scope="col" id="smallCell">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="table-dark">
-                            <td>Textured Soybeans Burger</td>
-                            <td>20</td>
-                        </tr>
-                        <tr class="table-dark">
-                            <td>Eggplant Burger</td>
-                            <td>20</td>
-                        </tr>
-                        <tr class="table-dark">
-                            <td>Zucchini Burger</td>
-                            <td>20</td>
-                        </tr>
-                        <tr class="table-dark">
-                            <td>Tofu Burger</td>
-                            <td>20</td>
-                        </tr>
-                        <tr class="table-dark">
-                            <td>Lentils Burger</td>
-                            <td>20</td>
-                        </tr>
-                        <tr class="table-dark">
-                            <td>Mushroom Burger</td>
-                            <td>20</td>
-                        </tr>
-                    </tbody>
-                </table> 
-            </div>
-            <div class="col-12 d-lg-none d-block align-self-center">
-                <img src="../assets/images/drink.jpg" alt="" class="img-fluid center-block" id="imgMenu">
             </div>
         </div>
     </section>
