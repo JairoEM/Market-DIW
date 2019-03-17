@@ -47,7 +47,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             About us
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="confirmation">
                             <a class="dropdown-item" href="./gallery.html">Gallery</a>
                             <a class="dropdown-item" href="./opinions.html">Opinions</a>
                             <a class="dropdown-item" href="./location.html">Location</a>
@@ -97,16 +97,16 @@
                     </div>
                     <div class="form-group">
                         <label for="">Phone number*</label>
-                        <input type="text" class="form-control required border rounded border-secondary" required pattern="^[0-9]{1,}$">
+                        <input type="text" class="form-control required border rounded border-secondary" required pattern="^[0-9]{1,}$" id="black">
                     </div>
                     <div class="form-group">
                         <label for="">Hour of book*</label>
-                        <input type="time" class="form-control required border rounded border-secondary" required min="20:00" max="23:00" aria-describedby="hourHelp">
+                        <input type="time" class="form-control required border rounded border-secondary" required min="20:00" max="23:00" aria-describedby="hourHelp" id="black">
                         <small id="hourHelp" class="form-text text-muted">You can book your table from 20:00 to 23:00.</small>
                     </div>
                     <div class="form-group">
                         <label for="">Diners</label>
-                        <select class="form-control required border rounded border-secondary">
+                        <select class="form-control required border rounded border-secondary" id="black">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -121,31 +121,33 @@
                     </div>
                     <div class="form-group">
                         <label for="">Comments</label>
-                        <textarea class="form-control border rounded border-secondary" rows="3" style="resize: none;"></textarea>
+                        <textarea class="form-control border rounded border-secondary" rows="3" style="resize: none;" id="black"></textarea>
                     </div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Book your table</button>
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" id="black">Book your table</button>
 
                     <!-- MODAL -->        
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Book your table</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <p>
-                                    If you are sure that you want to book a table, please click on "Book" button. 
-                                    If you want to deny your reservation, please click on "Back" button. 
-                                    Remember that we will confirm your reservation as soon as possible.
-                                </p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
-                                <button type="submit" class="btn btn-primary">Book</button>
-                            </div>
+                                <div class="modal-header" id="confirmation">
+                                    <h5 class="modal-title" >Book your table</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" id="confirmation">
+                                    <p>
+                                        If you are sure that you want to book a table, please click on "Book" button. 
+                                        If you want to deny your reservation, please click on "Back" button. 
+                                        Remember that we will confirm your reservation as soon as possible.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div id="confirmation">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Book</button>
+                                </div>
                             </div>
                         </div>
                     </div>
