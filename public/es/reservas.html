@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="shortcut icon" href="./public/logoDark.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="shortcut icon" href="../public/logoDark.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.css">
@@ -22,7 +22,7 @@
   <body>
     <section id="header">
         <div class="bg-primary" style="text-align: center; height: 120px;">
-            <img src="./assets/greenTownTop.png" alt="" style="padding: 20px 0;">
+            <img src="../../assets/greenTownTop.png" alt="" style="padding: 20px 0;">
         </div>
     </section>
 
@@ -38,10 +38,10 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./menu.html">Menu</a>
+                    <a class="nav-link" href="./menu.html">Menú</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Book a Table</a>
+                    <a class="nav-link" href="#">Reservas</a>
                 </li>
                 <li class="nav-item dropdown">
                     <div class="d-none d-lg-block">
@@ -49,22 +49,22 @@
                             About us
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="confirmation">
-                            <a class="dropdown-item" href="../gallery.html">Gallery</a>
-                            <a class="dropdown-item" href="./opiniones.html">Opinions</a>
-                            <a class="dropdown-item" href="./localizacion.html">Location</a>
+                            <a class="dropdown-item" href="../gallery.html">Galería</a>
+                            <a class="dropdown-item" href="./opiniones.html">Opiniones</a>
+                            <a class="dropdown-item" href="./localizacion.html">Localización</a>
                         </div>
                     </div>
                 </li>
 
                 <!-- NAVBAR ITEMS FOR MOBILE AND TABLET -->
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="../gallery.html">Gallery</a>
+                    <a class="nav-link" href="../gallery.html">Galería</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./opiniones.html">Opinions</a>
+                    <a class="nav-link" href="./opiniones.html">Opiniones</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./localizacion.html">Location</a>
+                    <a class="nav-link" href="./localizacion.html">Localización</a>
                 </li>
             </ul>
 
@@ -81,32 +81,32 @@
         <section class="container" id="whiteContainer">
             <div class="row justify-content-center" id="contentWC">
                 <div class="col-auto" id="centerText">
-                    <h1>Do you want to come?</h1>
+                    <h1>¿Estás pensando en visitarnos?</h1>
                 </div>
             </div>   
             <div class="row">
                 <div class="col-lg-8 col-12">
                     <form id="contentWC">
                         <div class="form-group">
-                            <label for="">Name of the reservation*</label>
-                            <input type="text" class="form-control required border rounded border-secondary" autofocus required placeholder="Name and surname" aria-describedby="nameHelp">
-                            <small id="nameHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+                            <label for="">Nombre de la reserva*</label>
+                            <input type="text" class="form-control required border rounded border-secondary" autofocus required placeholder="Nombre y apellidos" aria-describedby="nameHelp">
+                            <small id="nameHelp" class="form-text text-muted">Tus datos no serán compartidos.</small>
                         </div>
                         <div class="form-group">
-                            <label for="">Email address*</label>
-                            <input type="email" class="form-control required border rounded border-secondary" required pattern="^[a-zA-Z0-9/*-_.]{1,}[@][a-z]{1,}.com$" placeholder="example@mail.com">
+                            <label for="">Dirección de correo electrónico*</label>
+                            <input type="email" class="form-control required border rounded border-secondary" required pattern="^[a-zA-Z0-9/*-_.]{1,}[@][a-z]{1,}.com$" placeholder="ejemplo@mail.com">
                         </div>
                         <div class="form-group">
-                            <label for="">Phone number*</label>
+                            <label for="">Número de teléfono*</label>
                             <input type="text" class="form-control required border rounded border-secondary" required pattern="^[0-9]{1,}$" id="black">
                         </div>
                         <div class="form-group">
-                            <label for="">Hour of book*</label>
+                            <label for="">Hora de la reserva*</label>
                             <input type="time" class="form-control required border rounded border-secondary" required min="20:00" max="23:00" aria-describedby="hourHelp" id="black">
-                            <small id="hourHelp" class="form-text text-muted">You can book your table from 20:00 to 23:00.</small>
+                            <small id="hourHelp" class="form-text text-muted">Las reservas están abiertas entre las 20:00 y las 23:00.</small>
                         </div>
                         <div class="form-group">
-                            <label for="">Diners</label>
+                            <label for="">Comensales*</label>
                             <select class="form-control required border rounded border-secondary" id="black">
                                 <option>1</option>
                                 <option>2</option>
@@ -117,37 +117,37 @@
                                 <option>7</option>
                                 <option>8</option>
                                 <option>5</option>
-                                <option>10 or more</option>
+                                <option>10 o más</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="">Comments</label>
+                            <label for="">Comentarios</label>
                             <textarea class="form-control border rounded border-secondary" rows="3" style="resize: none;" id="black"></textarea>
                         </div>
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" id="black">Book your table</button>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" id="black">Reservar</button>
 
                         <!-- MODAL -->        
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header" id="confirmation">
-                                        <h5 class="modal-title" >Book your table</h5>
+                                        <h5 class="modal-title" >Estás a un paso de reservar tu mesa</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body" id="confirmation">
                                         <p>
-                                            If you are sure that you want to book a table, please click on "Book" button. 
-                                            If you want to deny your reservation, please click on "Back" button. 
-                                            Remember that we will confirm your reservation as soon as possible.
+                                            Si estás seguro de querer reservar una pesa, por favor, haz click en "Reservar". 
+                                            Si quieres cancelar el proceso de reserva, por favor, haz click en "Volver". 
+                                            Recuerda que confirmaremos tu reserva tan pronto como nos sea posible.
                                         </p>
                                     </div>
                                     <div class="modal-footer">
                                         <div id="confirmation">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Book</button>
+                                        <button type="submit" class="btn btn-primary">Reservar</button>
                                     </div>
                                 </div>
                             </div>
@@ -158,12 +158,12 @@
                 <!-- CONFIRM ORDER PC -->
                 <div class="offset-1 col-2 d-none d-lg-block" style="text-align:center; padding-top: 20px;">
                     <div id="thanksForm">
-                        <h3 style="opacity: 1;">Thanks for thinking about us</h3>
+                        <h3 style="opacity: 1;">Gracias por pensar en nosotros</h3>
                     </div>
                     <div style="height: 50px;"></div>
                     <div>
                         <p>
-                            We will confirm your reservation as soon as possible.
+                            Confirmaremos tu reserva tan pronto como nos sea posible.
                         </p>
                     </div>
                 </div>
@@ -172,7 +172,7 @@
                 <div class="col-12 d-block d-lg-none" style="text-align:center; padding-top: 30px;">
                     <div id="contentWC">
                         <h5>
-                            We will confirm your reservation as soon as possible
+                            Confirmaremos tu reserva tan pronto como nos sea posible.
                         </h5>
                     </div>
                 </div>
@@ -185,21 +185,21 @@
         <div class="container" style="padding: auto;">
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-12 col-lg-2" style="padding-bottom: 20px;" id="centerText">
-                    <img src="../assets/greenTownBottom.png" style="height: 80px;" alt=""></span>
+                    <img src="../../assets/greenTownBottom.png" style="height: 80px;" alt=""></span>
                 </div>
                 <div class="col-12 col-lg-6 offset-lg-1" style="padding-bottom: 20px;" id="centerText">
                     &copy; Green Town - Gastro Restaurant
                     <div class="w-100"></div>
                     445 Mount Eden Road, Mount Eden, Auckland // ZIP 5022
                     <div class="w-100"></div>
-                    <span><img src="../assets/phone.svg" alt="" height="16px" width="auto"></span> 00 64 9 123 4567
+                    <span><img src="../../assets/phone.svg" alt="" height="16px" width="auto"></span> 00 64 9 123 4567
                 </div>
                 <div class="col-12 col-lg-2 offset-lg-1" style="padding-bottom: 20px;" id="centerText">
                     <div class="row">
                         <div class="col-12">
-                            <img src="../assets/twitter.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
-                            <img src="../assets/instagram.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
-                            <img src="../assets/facebook.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">                            
+                            <img src="../../assets/twitter.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
+                            <img src="../../assets/instagram.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
+                            <img src="../../assets/facebook.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">                            
                         </div>
                     </div>
                 </div>
@@ -208,7 +208,7 @@
     </section>
 
     <!-- Optional JavaScript -->
-    <script src="../javascripts/main.js"></script>
+    <script src="../../javascripts/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();
