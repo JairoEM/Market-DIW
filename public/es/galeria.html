@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="shortcut icon" href="../logoDark.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/gallery-grid.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.css">
@@ -17,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <title>Green Town - Localización</title>
+    <title>Green Town - Galería</title>
   </head>
   <body>
     <section id="header">
@@ -46,31 +47,31 @@
                 <li class="nav-item dropdown">
                     <div class="d-none d-lg-block">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Sobre nosotros
+                            Sobre Nosotros
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="confirmation">
-                            <a class="dropdown-item" href="./galeria.html">Galería</a>
+                            <a class="dropdown-item" href="#">Galería</a>
                             <a class="dropdown-item" href="./opiniones.html">Opiniones</a>
-                            <a class="dropdown-item" href="#">Localización</a>
+                            <a class="dropdown-item" href="./localizacion.html">Localización</a>
                         </div>
                     </div>
                 </li>
 
                 <!-- NAVBAR ITEMS FOR MOBILE AND TABLET -->
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./galeria.html">Galería</a>
+                    <a class="nav-link" href="#">Galería</a>
                 </li>
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="./opiniones.html">Opiniones</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="#">Localización</a>
+                    <a class="nav-link" href="./localizacion.html">Localización</a>
                 </li>
             </ul>
 
             <!-- THAT BUTTON MAY HAVE THE OPTION TO CHANGE THE LANGUAGE -->
             <br>
-            <a href="../location.html" style="color:white;"><u>ENG</u></a> / <a href="#"style="color:white;"><u>ESP</u></a>
+            <a href="../gallery.html" style="color:white;"><u>ENG</u></a> / <a href="#"style="color:white;"><u>ESP</u></a>
             <br>
         </div>
     </nav>
@@ -78,48 +79,121 @@
     <!-- DIV WITH BACKGROUNB IMAGE -->
     <div class="container-fluid" id="bg">
 
-        <!-- INTRO LOCATION -->
-        <section class="container" id="whiteContainer">
-            <div class="row justify-content-center" id="contentWC">
-                <div class="col-auto" id="centerText">
-                    <h1>Donde puedes encontrarnos</h1>
+        <section class="container">
+            <div class="tz-gallery">
+                <div class="row align-items-center justify-content-center">
+
+                    <div class="col-sm-12 col-lg-8">
+                        <a class="lightbox" href="../../assets/images/burger3.jpg">
+                            <img src="../../assets/images/burger3.jpg" class="animated bounceInLeft">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 d-block d-lg-none">
+                        <a class="lightbox" href="../../assets/images/tofu3.jpg">
+                            <img src="../../assets/images/tofu3.jpg">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 d-block d-lg-none">
+                        <a class="lightbox" href="../../assets/images/people1.png">
+                            <img src="../../assets/images/people1.png">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 d-lg-block d-none">
+                        <a class="lightbox" href="../../assets/images/tofu3.jpg">
+                            <img src="../../assets/images/tofu3.jpg">
+                        </a>
+                        <a class="lightbox" href="../../assets/images/people1.png">
+                            <img src="../../assets/images/people1.png">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="lightbox" href="../../assets/images/taco2.jpg">
+                            <img src="../../assets/images/taco2.jpg">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="lightbox" href="../../assets/images/burger1.jpg">
+                            <img src="../../assets/images/burger1.jpg">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="lightbox" href="../../assets/images/people2.jpg">
+                            <img src="../../assets/images/people2.jpg">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 d-lg-none d-block">
+                        <a class="lightbox" href="../../assets/images/people3.jpg">
+                            <img src="../../assets/images/people3.jpg">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 d-lg-none d-block">
+                        <a class="lightbox" href="../../assets/images/taco1.jpg">
+                            <img src="../../assets/images/taco1.jpg">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4 d-lg-block d-none">
+                        <a class="lightbox" href="../../assets/images/taco1.jpg">
+                            <img src="../../assets/images/taco1.jpg">
+                        </a>
+                        <a class="lightbox" href="../../assets/images/people3.jpg">
+                            <img src="../../assets/images/people3.jpg">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-8">
+                        <a class="lightbox" href="../../assets/images/gtd.png">
+                            <img src="../../assets/images/gtd.png" class="wow bounceInRight">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-12 col-lg-4">
+                        <a class="lightbox" href="../../assets/images/burger2.jpg">
+                            <img src="../../assets/images/burger2.jpg" class="wow rollIn">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="lightbox" href="../../assets/images/dessert.jpg">
+                            <img src="../../assets/images/dessert.jpg">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="lightbox" href="../../assets/images/sushi.jpg">
+                            <img src="../../assets/images/sushi.jpg">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="lightbox" href="../../assets/images/snack1.jpg">
+                            <img src="../../assets/images/snack1.jpg">
+                        </a>
+                    </div>
+                    
+                    <div class="col-sm-6 col-lg-4">
+                        <a class="lightbox" href="../../assets/images/tofu1.jpg">
+                            <img src="../../assets/images/tofu1.jpg">
+                        </a>
+                    </div>
+
+                    <div class="col-sm-12 col-lg-4">
+                        <a class="lightbox" href="../../assets/images/burger4.jpg">
+                            <img src="../../assets/images/burger4.jpg" class="wow zoomInUp">
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div id="contentWC" style="text-align: center;">
-                <p>
-                    Si quieres venir a conocernos, o volver a visitarnos, 
-                    nos encontramos en el 445 de Mount Eden Road, Mount Eden, 
-                    Auckland, a 100 metros de la galería de arte Glifford y a 
-                    500 metros del Mount Eden Summit.
-                </p>
-
-                <p>
-                    Recuerda que también puedes reservar una hora en cualquier 
-                    momento y para cualquier ocasión en nuestra sección "
-                    <a href="./reservas.html">reservas</a>".
-                </p>
-
-                <p>
-                    También puedes ponerte en contacto por teléfono al
-                    <a href="tel: 00 64 9 123 4567">00 64 9 123 4567</a> 
-                    o hablar con nosotros en nuestras redes sociales.            
-                </p>
-
-                <p>
-                    <span><img src="../../assets/twitter.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"></span>
-                    <span><img src="../../assets/instagram.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"></span>
-                    <span><img src="../../assets/facebook.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"> </span> 
-                </p>
-            </div>
         </section>
 
-        <!-- MAP -->
-        <section class="container-fluid" style="padding: 0; margin: 0;">
-            <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.3401575068074!2d174.75979531571107!3d-36.88220997993183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4632b3e7d2c3%3A0xcccf9d03ee62e7f!2s445+Mount+Eden+Rd%2C+Mount+Eden%2C+Auckland+1024%2C+Nueva+Zelanda!5e0!3m2!1ses!2ses!4v1548937658200" 
-                width="100%" height="400" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
     </div>
 
     <!-- FOOTER -->
