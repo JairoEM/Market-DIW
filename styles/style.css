@@ -94,7 +94,7 @@ form {
     text-align: right;
 }
 
-#stars {
+.stars {
     height: 1em;
     width: auto;
     float: left;
