@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"> 
 
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
@@ -50,7 +51,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="confirmation">
                             <a class="dropdown-item" href="./gallery.html">Gallery</a>
-                            <a class="dropdown-item" href="./opinions.html">Opinions</a>
+                            <a class="dropdown-item" href="./opinions.php">Opinions</a>
                             <a class="dropdown-item" href="./location.html">Location</a>
                         </div>
                     </div>
@@ -61,7 +62,7 @@
                     <a class="nav-link" href="./gallery.html">Gallery</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./opinions.html">Opinions</a>
+                    <a class="nav-link" href="./opinions.php">Opinions</a>
                 </li>
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="./location.html">Location</a>
@@ -76,26 +77,31 @@
     </nav>
 
     <!-- DIV WITH BACKGROUNB IMAGE -->
-    <div class="container-fluid" id="bg">
-        <section  class="container">
+    <div class="container-fluid" id="bg" style="min-height: 70vh;">
+
+        <section  class="container" id="introEmployees">
             <div class="row justify-content-center" id="contentWC">
                 <div class="col-auto" style="text-align: center;">
                     <h1>Employees</h1>
                 </div>
             </div>
 
-            <form>
+            <form method="POST" action="../php/conection.php">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">ID</label>
-                    <input type="email" class="form-control" id="employeeName" aria-describedby="emailHelp" placeholder="Enter employee ID">
-                </div>
-                <div class="form-group">
+                    <label for="exampleInputPassword1">ID</label>
+                    <input type="text" class="form-control" id="employeeID" placeholder="ID" style="color: rgb(44, 43, 43) !important;">
+
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="employeePass" placeholder="Password">
+                    <input type="password" class="form-control" id="employeePass" placeholder="Password" style="color: rgb(44, 43, 43) !important;">
                 </div>
-                <button type="submit" class="btn btn-primary">Enter</button>
+                <!-- No puede ser type="submit" porque entonces recarga la página -->
+                <button type="button" class="btn btn-secondary" id="verEmployees" style="color: rgb(44, 43, 43) !important;">Enter</button>
             </form>
-        </section>   
+        </section>
+        
+        <section class="container" id="contenidoEmployees">
+
+        </section>
     </div>
 
     <!-- FOOTER -->

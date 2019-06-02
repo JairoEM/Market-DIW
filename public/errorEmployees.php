@@ -12,14 +12,20 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"> 
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <title>Green Town - Location</title>
+    <title>Green Town</title>
   </head>
-  <body>
+  <body>  
+    <!-- PHP -->
+    <?php
+        header("refresh:2; url=./employees.php");
+    ?>
+    
     <section id="header">
         <div class="bg-primary" style="text-align: center; height: 120px;">
             <img src="../assets/greenTownTop.png" alt="" style="padding: 20px 0;">
@@ -38,7 +44,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./menu.html">Menu</a>
+                    <a class="nav-link breadcrumb-item active" href="./menu.html">Menu</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./bookATable.html">Book a Table</a>
@@ -50,8 +56,8 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="confirmation">
                             <a class="dropdown-item" href="./gallery.html">Gallery</a>
-                            <a class="dropdown-item" href="./opinions.php">Opinions</a>
-                            <a class="dropdown-item breadcrumb-item active" href="">Location</a>
+                            <a class="dropdown-item" href="./opinions.html">Opinions</a>
+                            <a class="dropdown-item" href="./location.html">Location</a>
                         </div>
                     </div>
                 </li>
@@ -61,66 +67,29 @@
                     <a class="nav-link" href="./gallery.html">Gallery</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./opinions.php">Opinions</a>
+                    <a class="nav-link" href="./opinions.html">Opinions</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link breadcrumb-item active" href="">Location</a>
+                    <a class="nav-link" href="./location.html">Location</a>
                 </li>
             </ul>
 
             <!-- THAT BUTTON MAY HAVE THE OPTION TO CHANGE THE LANGUAGE -->
             <br>
-            <a href="#" style="color:white;"><u>ENG</u></a> / <a href="./es/localizacion.html"style="color:white;"><u>ESP</u></a>
+            <a href="#" style="color:white;"><u>ENG</u></a> / <a href="./es/menu.html"style="color:white;"><u>ESP</u></a>
             <br>
         </div>
     </nav>
 
     <!-- DIV WITH BACKGROUNB IMAGE -->
-    <div class="container-fluid" id="bg" style="min-height: 100% !important;">
-
-        <!-- INTRO LOCATION -->
-        <section class="container" id="whiteContainer">
+    <div class="container-fluid" id="bg" style="min-height: 70vh;">
             <div class="row justify-content-center" id="contentWC">
-                <div class="col-auto" id="centerText">
-                    <h1>Where can you find us</h1>
+                <div class="col-auto" style="text-align: center;">
+                    <h1 class="text-center">DATOS ERRONEOS</h1>
+                    <h2 class="text-center">Introduzca de nuevo los datos</h2>
                 </div>
             </div>
-            <div id="contentWC" style="text-align: center;">
-                <p>
-                    If you want to come and meet us, or would like to eat again 
-                    at our restaurant, we are located at 445 Mount Eden Road, 
-                    Mount Eden, Auckland, 100 meters from the Glifford art 
-                    gallery and 500 meters from Mount Eden Summit.
-                </p>
-
-                <p>
-                    Remember that you can also reserve your table at any time 
-                    and for any occasion, in our "
-                    <a href="./bookATable.html">book a table</a>" section. 
-                </p>
-
-                <p>
-                    You can also contact us by phone 
-                    <a href="tel: 00 64 9 123 4567">00 64 9 123 4567</a> 
-                    or talk to us in our social networks.            
-                </p>
-
-                <p>
-                    <span><img src="../assets/twitter.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"></span>
-                    <span><img src="../assets/instagram.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"></span>
-                    <span><img src="../assets/facebook.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"> </span> 
-                </p>
-            </div>
         </section>
-
-        <!-- MAP -->
-        <section class="container-fluid" style="padding: 0; margin: 0;">
-            <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.3401575068074!2d174.75979531571107!3d-36.88220997993183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4632b3e7d2c3%3A0xcccf9d03ee62e7f!2s445+Mount+Eden+Rd%2C+Mount+Eden%2C+Auckland+1024%2C+Nueva+Zelanda!5e0!3m2!1ses!2ses!4v1548937658200" 
-                width="100%" height="400" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
-
     </div>
 
     <!-- FOOTER -->
@@ -149,13 +118,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Optional JavaScript -->
-    <script src="../javascripts/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
