@@ -18,7 +18,14 @@
     foreach ($res as $key => $value) {        
         if($value[0] == $usuario){
             if($value[1] == $pass){
-                header('Location: ../index.html');     
+                session_start();        
+
+                $_SESSION['loggedin'] = true;
+                $_SESSION['username'] = $usuario;
+                $_SESSION['password'] = $pass;
+    
+                header('Location: ../public/employees.php');
+                exit;
             }
         }
     }

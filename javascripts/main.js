@@ -137,4 +137,9 @@ $(document).ready(function(){
             return false;
         }
     });
+
+    // Function para volver al menú Employees
+    $("#backEmployees").click(function () {
+        location.href = "./employees.php";
+    });
 });

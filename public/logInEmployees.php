@@ -1,11 +1,3 @@
-<?php
-    // session_start();
-
-    // if(!isset($_SESSION['loggedin'])) { 
-    //     header('Location: ./errorEmployees.php');
-    // }          
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,7 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <title>Green Town - Employees</title>
+    <title>Green Town - Log In</title>
   </head>
   <body>
     <section id="header">
@@ -85,20 +77,30 @@
     </nav>
 
     <!-- DIV WITH BACKGROUNB IMAGE -->
-    <div class="container-fluid" id="bg" style="min-height: 600px;">   
-        <section class="container" id="whiteContainer">
-        
-            <div>
-                <a href=""><h1 class="linksEmployees">ORDERS</h1></a>
+    <div class="container-fluid" id="bg" style="min-height: 70vh;">
 
-                <a href=""><h1 class="linksEmployees">KITCHEN</h1></a>
-
-                <a href="./storage.php"><h1 class="linksEmployees">STORAGE</h1></a>
+        <section  class="container" id="introEmployees">
+            <div class="row justify-content-center" id="contentWC">
+                <div class="col-auto" style="text-align: center;">
+                    <h1>Employees</h1>
+                </div>
             </div>
 
-            <form method="POST" action="../php/logoff.php">
-                <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; float: right; margin-top: 300px;">Log Off</button>
+            <form method="POST" action="../php/conection.php">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">ID</label>
+                    <input type="text" class="form-control" name="employeeID" placeholder="ID" style="color: rgb(44, 43, 43) !important;">
+
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" name="employeePass" placeholder="Password" style="color: rgb(44, 43, 43) !important;">
+                </div>
+                <!-- No puede ser type="submit" porque entonces recarga la página -->
+                <button type="submit" class="btn btn-secondary" id="verEmployees" style="color: rgb(44, 43, 43) !important;">Enter</button>
             </form>
+        </section>
+        
+        <section class="container" id="contenidoEmployees">
+
         </section>
     </div>
 

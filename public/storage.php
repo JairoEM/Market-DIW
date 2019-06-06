@@ -88,16 +88,90 @@
     <div class="container-fluid" id="bg" style="min-height: 600px;">   
         <section class="container" id="whiteContainer">
         
-            <div>
-                <a href=""><h1 class="linksEmployees">ORDERS</h1></a>
+            <!-- TABLE -->
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Plate</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Stock</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                <a href=""><h1 class="linksEmployees">KITCHEN</h1></a>
+                    <!-- PHP TABLE -->
+                    <?php
+                        require("../php/clases/DBConection.php");
 
-                <a href="./storage.php"><h1 class="linksEmployees">STORAGE</h1></a>
-            </div>
+                        $conexion = new Conexion();
+            
+                        try {
+                            $sql = "SELECT * FROM plates";
+                            $res = $conexion->query($sql);
+                        } catch (PDOException $e) {
+                            echo 'Error de consulta' . $e->getMessage();
+                            exit();
+                        }
 
+                        $alert = false;
+                        $count = 0;
+                        $plates = array();
+
+                        foreach ($res as $key => $value) {
+                            echo "
+                                <tr class='table-dark'>
+                                    <th scope='row'>$value[0]</th>
+                                    <td>$value[1]</td>
+                                    <td>$value[2]</td>";
+
+                            if($value[3] <= 10){
+                                echo"<td style='color: red !important;'>$value[3]</td>";
+                                $alert = true;
+                                $count = $count + 1;
+                                array_push($plates, $value[1]);
+                            }else{
+                                echo"<td>$value[3]</td>";       
+                            }
+                            echo "</tr>";
+                        }
+
+                        if($alert == true){
+                            echo"
+                                <div class='modal fade' id='needToBuy' tabindex='-1' role='dialog' aria-labelledby='needToBuy' aria-hidden='true'>
+                                    <div class='modal-dialog' role='document'>
+                                        <div class='modal-content'>
+                                            <div class='modal-header' id='confirmation'>
+                                                <h5 class='modal-title' >What do we need to replace</h5>
+                                                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                                <span aria-hidden='true'>&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class='modal-body' id='confirmation'>
+                                                <p>";
+
+                                                for($i = 0; $i < $count; $i++){
+                                                    echo "- $plates[$i]<br>";
+                                                }
+                                                    
+                                            echo "</p>
+                                            </div>
+                                            <div class='modal-footer'>
+                                                <button type='button' class='btn btn-primary' data-dismiss='modal'>Yes Sir!</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ";                        
+                        }
+                    ?>
+                </tbody>
+            </table>
+
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#needToBuy" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px; display: block;">To Replace</button>
+            <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Back</button>
             <form method="POST" action="../php/logoff.php">
-                <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; float: right; margin-top: 300px;">Log Off</button>
+                <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
             </form>
         </section>
     </div>

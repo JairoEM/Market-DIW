@@ -23,7 +23,7 @@
   <body>  
     <!-- PHP -->
     <?php
-        header("refresh:2; url=./employees.php");
+        header("refresh:2; url=./logInEmployees.php");
     ?>
     
     <section id="header">

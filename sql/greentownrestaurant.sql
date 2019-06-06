@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-06-2019 a las 21:07:26
+-- Tiempo de generación: 05-06-2019 a las 20:35:37
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -11,6 +11,9 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
+
+CREATE DATABASE "greentownrestaurant";
+USE "greentownrestaurant";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -131,53 +134,54 @@ INSERT INTO `opinions` (`BookingID`, `Text`, `Points`) VALUES
 -- Estructura de tabla para la tabla `plate`
 --
 
-CREATE TABLE `plate` (
+CREATE TABLE `plates` (
   `ID` varchar(2) NOT NULL,
   `Name` varchar(50) NOT NULL,
-  `Price` double(4,2) NOT NULL
+  `Price` double(4,2) NOT NULL,
+  `Quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `plate`
+-- Volcado de datos para la tabla `plates`
 --
 
-INSERT INTO `plate` (`ID`, `Name`, `Price`) VALUES
-('D1', 'Vegan Chocolate Cupcake', 7.00),
-('D2', 'Peanut Butter and Chocolate Big Cookie', 7.00),
-('D3', 'Vegan Strawberry Cheesecake', 8.00),
-('D4', 'Carrot Pie', 6.00),
-('D5', 'Apple Pie', 6.00),
-('D6', 'Chocolate Chip Banana Bread', 7.50),
-('E1', 'Ceasar Salada', 14.00),
-('E2', 'Fruit and Vegetables Salad', 14.50),
-('E3', 'Gazpacho', 8.00),
-('E4', 'Zucchini Tots', 12.00),
-('E5', 'Vegan \"Quesadilla\"', 16.00),
-('E6', 'Potato Chips', 10.00),
-('M1', 'Thai Citrus Tofu Kebabs', 14.00),
-('M2', 'Fried Tofu', 12.50),
-('M3', 'Comforting Leek Risotto', 14.00),
-('M4', 'Creamy Asparagus Risotto', 12.00),
-('M5', 'Fiery Dragon Noodles', 15.00),
-('M6', 'Mexican Vegetable Tacos', 18.50),
-('S1', 'Eggplant Curry', 18.50),
-('S2', 'Vegetables and Fruit Sushi', 22.00),
-('S3', 'Stuffed Bell Peppers', 19.00),
-('S4', 'Pizza Pronto', 16.00),
-('S5', 'Pizza Five CHeese', 16.00),
-('S6', 'Ricotta and Zucchini Cannelloni', 17.50),
-('V1', 'Textured Soybeans Burger', 20.00),
-('V2', 'Eggplant Burger', 20.00),
-('V3', 'Zucchini Burger', 20.00),
-('V4', 'Tofu Burger', 20.00),
-('V5', 'Lentils Burger', 20.00),
-('V6', 'Mushroom Burger', 20.00),
-('X1', 'Mineral Water', 2.50),
-('X2', 'Refreshments', 3.00),
-('X3', 'Juices', 2.50),
-('X4', 'National', 3.00),
-('X5', 'Imported', 5.00),
-('X6', 'Vegan Liquor Shots', 2.00);
+INSERT INTO `plates` (`ID`, `Name`, `Price`, `Quantity`) VALUES
+('D1', 'Vegan Chocolate Cupcake', 7.00, 20),
+('D2', 'Peanut Butter and Chocolate Big Cookie', 7.00, 12),
+('D3', 'Vegan Strawberry Cheesecake', 8.00, 8),
+('D4', 'Carrot Pie', 6.00, 16),
+('D5', 'Apple Pie', 6.00, 14),
+('D6', 'Chocolate Chip Banana Bread', 7.50, 21),
+('E1', 'Ceasar Salada', 14.00, 0),
+('E2', 'Fruit and Vegetables Salad', 14.50, 9),
+('E3', 'Gazpacho', 8.00, 16),
+('E4', 'Zucchini Tots', 12.00, 28),
+('E5', 'Vegan \"Quesadilla\"', 16.00, 6),
+('E6', 'Potato Chips', 10.00, 25),
+('M1', 'Thai Citrus Tofu Kebabs', 14.00, 12),
+('M2', 'Fried Tofu', 12.50, 10),
+('M3', 'Comforting Leek Risotto', 14.00, 18),
+('M4', 'Creamy Asparagus Risotto', 12.00, 19),
+('M5', 'Fiery Dragon Noodles', 15.00, 24),
+('M6', 'Mexican Vegetable Tacos', 18.50, 26),
+('S1', 'Eggplant Curry', 18.50, 9),
+('S2', 'Vegetables and Fruit Sushi', 22.00, 21),
+('S3', 'Stuffed Bell Peppers', 19.00, 11),
+('S4', 'Pizza Pronto', 16.00, 22),
+('S5', 'Pizza Five CHeese', 16.00, 15),
+('S6', 'Ricotta and Zucchini Cannelloni', 17.50, 18),
+('V1', 'Textured Soybeans Burger', 20.00, 18),
+('V2', 'Eggplant Burger', 20.00, 17),
+('V3', 'Zucchini Burger', 20.00, 16),
+('V4', 'Tofu Burger', 20.00, 26),
+('V5', 'Lentils Burger', 20.00, 9),
+('V6', 'Mushroom Burger', 20.00, 28),
+('X1', 'Mineral Water', 2.50, 31),
+('X2', 'Refreshments', 3.00, 29),
+('X3', 'Juices', 2.50, 25),
+('X4', 'National', 3.00, 27),
+('X5', 'Imported', 5.00, 14),
+('X6', 'Vegan Liquor Shots', 2.00, 22);
 
 --
 -- Índices para tablas volcadas
