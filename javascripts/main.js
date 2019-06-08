@@ -1,6 +1,5 @@
 $(document).ready(function(){
-
-    // STARS FUNCTION
+    // Stars functionality
     $('#star1').on({
         'click' : function(){
             $('#star2').attr('src', '../assets/emptyStar.svg');
@@ -131,15 +130,32 @@ $(document).ready(function(){
         }
     });
 
-    // Desactivamos la tecla enter
+    // Turn off the key "enter"
     $("form").keypress(function(e) {
         if (e.which == 13) {
             return false;
         }
     });
 
-    // Function para volver al menú Employees
+    // Function to back to "employees.php"
     $("#backEmployees").click(function () {
         location.href = "./employees.php";
+    });
+
+    // Function to show the differents kind of playes on "orders.php"
+    $("#newOrder").click(function(){
+        $("#createOrder").show(1000);
+        $("#showOrders").hide(1000);
+    });
+
+    $("#oldOrder").click(function(){
+        $("#createOrder").hide(1000);
+        $("#showOrders").show(1000);
+    });
+
+    $(".buttonID").click(function(){
+        $("#idUpdated").val("" + this.id);
+        $("#createOrder").hide(1000);
+        $("#showOrders").hide(1000);
     });
 });

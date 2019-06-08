@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['loggedin'])) { 
+        header('Location: ./errorEmployees.php');
+    }          
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,11 +22,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"> 
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <title>Green Town</title>
+    <title>Green Town - Employees</title>
   </head>
   <body>
     <section id="header">
@@ -53,6 +61,7 @@
                             <a class="dropdown-item" href="./gallery.html">Gallery</a>
                             <a class="dropdown-item" href="./opinions.php">Opinions</a>
                             <a class="dropdown-item" href="./location.html">Location</a>
+                            <a class="dropdown-item" href="./logInEmployees.php">Employees</a>
                         </div>
                     </div>
                 </li>
@@ -71,36 +80,132 @@
 
             <!-- THAT BUTTON MAY HAVE THE OPTION TO CHANGE THE LANGUAGE -->
             <br>
-            <a href="#" style="color:white;"><u>ENG</u></a> / <a href="./es/menu.html"style="color:white;"><u>ESP</u></a>
+            <a href="#" style="color:white;"><u>ENG</u></a> / <a href=""style="color:white;"><u>ESP</u></a>
             <br>
         </div>
     </nav>
 
     <!-- DIV WITH BACKGROUNB IMAGE -->
-    <div class="container-fluid" id="bg" style="min-height: 70vh;">
+    <div class="container-fluid" id="bg" style="min-height: 600px;">
+        <section class="container" id="whiteContainer" style="text-align: center;">
+            <div class="contentWC">
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-outline-secondary" id="newOrder">NEW ORDER</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-outline-secondary" id="oldOrder">OLD ORDER</button>
+                    </div>
+                </div>
 
-        <section  class="container" id="introEmployees">
-            <div class="row justify-content-center" id="contentWC">
-                <div class="col-auto" style="text-align: center;">
-                    <h1>Employees</h1>
+                <div class="row" id="createOrder" style="width: 300px; margin: 40px auto 0; display: none;">
+                    <form action="../php/createOrder.php" method="POST">
+                        <div class="form-group">
+                            <label for="customerName">Customer Name</label>
+                            <input type="text" class="form-control" id="customerName" name="customerName" style="width: 300px; color: black !important;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="waiterID">Waiter ID</label>
+                            <input type="text" class="form-control" id="waiterID" name="waiterID" style="color: black !important;" placeholder="<?php echo $_SESSION['username']; ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tableNumber">Table</label>
+                            <input type="number" class="form-control" id="tableNumber" name="tableNumber" min="1" max="30" style="color: black !important;" placeholder="1">
+                        </div>
+
+                        <input type="submit" class="btn btn-outline-secondary" value="Create Order">
+                    </form>
+                </div>
+
+                <div class="row" id="showOrders" style="display: none; margin-top: 30px;">
+                    <!-- TABLE -->
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Booking ID</th>
+                                <th scope="col">Customer Name</th>
+                                <th scope="col">Day</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <!-- PHP TABLE -->
+                            <?php
+                                require("../php/clases/DBConection.php");
+
+                                $conexion = new Conexion();
+                                $obtainOrder = array();
+                                $count = 0;
+                    
+                                try {
+                                    $sql = "SELECT * FROM booking";
+                                    $res = $conexion->query($sql);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
+
+                                foreach ($res as $key => $value) {
+                                    echo "
+                                        <tr class='table-dark' style='max-height: 10px !important;'>
+                                            <th scope='row'>$value[0]</th>
+                                            <td>$value[3]</td>
+                                            <td>$value[4]</td>
+                                            <td><button type='button' class='btn btn-primary buttonID' id='$value[0]' style='padding: 0 10px;'>Select</button></td>
+                                        </tr>";
+                                    
+                                    array_push($obtainOrder, $value[0]);
+                                    $count++;
+                                }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
-            <form method="POST" action="../php/conection.php">
-                <div class="form-group">
-                    <label for="exampleInputPassword1">ID</label>
-                    <input type="text" class="form-control" id="employeeID" placeholder="ID" style="color: rgb(44, 43, 43) !important;">
-
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="employeePass" placeholder="Password" style="color: rgb(44, 43, 43) !important;">
-                </div>
-                <!-- No puede ser type="submit" porque entonces recarga la página -->
-                <button type="button" class="btn btn-secondary" id="verEmployees" style="color: rgb(44, 43, 43) !important;">Enter</button>
-            </form>
         </section>
         
-        <section class="container" id="contenidoEmployees">
+        <section class="container" id="whiteContainer" style="">
+            <p>All the plates will be added to <input type="text" id="idUpdated" readonly style="background: none; border: 0;"></span></p>
+            <div class="contentWC">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ENTRANTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">MAIN DISHES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SIDE DISHES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">VEGAN BURGERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">DESSERTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">DRINKS</a>
+                    </li>
+                </ul>
+            </div>
 
+            <!-- MAIN DISHES -->
+
+            <!-- SIDE DISHES -->
+
+            <!-- VEGAN BURGERS -->
+
+            <!-- DESSERTS -->
+
+            <!-- DRINKS -->
+            
+            <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Back</button>
+            <form method="POST" action="../php/logoff.php">
+                <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
+            </form>
         </section>
     </div>
 

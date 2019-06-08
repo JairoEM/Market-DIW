@@ -58,6 +58,7 @@
                             <a class="dropdown-item" href="./gallery.html">Gallery</a>
                             <a class="dropdown-item" href="./opinions.html">Opinions</a>
                             <a class="dropdown-item" href="./location.html">Location</a>
+                            <a class="dropdown-item" href="./logInEmployees.php">Employees</a>
                         </div>
                     </div>
                 </li>

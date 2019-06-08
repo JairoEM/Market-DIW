@@ -86,7 +86,7 @@ form {
     height: 50px;
 }
 
-#contentWC {
+#contentWC, .contentWC {
     padding: 20px;
 }
 

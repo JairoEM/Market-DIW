@@ -59,8 +59,9 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="confirmation">
                             <a class="dropdown-item" href="./gallery.html">Gallery</a>
-                            <a class="dropdown-item" href="./opinions.html">Opinions</a>
+                            <a class="dropdown-item" href="./opinions.php">Opinions</a>
                             <a class="dropdown-item" href="./location.html">Location</a>
+                            <a class="dropdown-item" href="./logInEmployees.php">Employees</a>
                         </div>
                     </div>
                 </li>
@@ -89,7 +90,7 @@
         <section class="container" id="whiteContainer">
         
             <div>
-                <a href=""><h1 class="linksEmployees">ORDERS</h1></a>
+                <a href="./orders.php"><h1 class="linksEmployees">ORDERS</h1></a>
 
                 <a href=""><h1 class="linksEmployees">KITCHEN</h1></a>
 

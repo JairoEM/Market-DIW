@@ -59,8 +59,9 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="confirmation">
                             <a class="dropdown-item" href="./gallery.html">Gallery</a>
-                            <a class="dropdown-item" href="./opinions.html">Opinions</a>
+                            <a class="dropdown-item" href="./opinions.php">Opinions</a>
                             <a class="dropdown-item" href="./location.html">Location</a>
+                            <a class="dropdown-item" href="./logInEmployees.php">Employees</a>
                         </div>
                     </div>
                 </li>
@@ -162,7 +163,11 @@
                                         </div>
                                     </div>
                                 </div>
-                            ";                        
+                            ";
+                            
+                            echo "<script language='javascript'>;
+                                    alert('You have some plates that need to be replaced.');
+                                </script>";
                         }
                     ?>
                 </tbody>
