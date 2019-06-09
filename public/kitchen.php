@@ -1,9 +1,9 @@
 <?php
-    // session_start();
+    session_start();
 
-    // if(!isset($_SESSION['loggedin'])) { 
-    //     header('Location: ./errorEmployees.php');
-    // }          
+    if(!isset($_SESSION['loggedin'])) { 
+        header('Location: ./errorEmployees.php');
+    }          
 ?>
 
 <!doctype html>
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"> 
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
@@ -71,7 +71,7 @@
                     <a class="nav-link" href="./gallery.html">Gallery</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./opinions.html">Opinions</a>
+                    <a class="nav-link" href="./opinions.php">Opinions</a>
                 </li>
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="./location.html">Location</a>
@@ -86,102 +86,85 @@
     </nav>
 
     <!-- DIV WITH BACKGROUNB IMAGE -->
-    <div class="container-fluid" id="bg" style="min-height: 600px;">   
+    <div class="container-fluid" id="bg" style="min-height: 600px;">
         <section class="container" id="whiteContainer">
-        
-            <!-- TABLE -->
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Plate</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Stock</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div class="contentWC">
+                <table class="table table-hover">
+                    <tbody>
+                        <thead>
+                            <tr>
+                                <th scope="col">Plate</th>
+                                <th scope="col">Estatus</th>
+                            </tr>
+                        </thead>
 
-                    <!-- PHP TABLE -->
-                    <?php
-                        require("../php/clases/DBConection.php");
+                        <!-- PHP TABLE -->
+                        <?php
+                            require("../php/clases/DBConection.php");
+                        
+                            $conexion = new Conexion();
 
-                        $conexion = new Conexion();
-            
-                        try {
-                            $sql = "SELECT * FROM plates";
-                            $res = $conexion->query($sql);
-                        } catch (PDOException $e) {
-                            echo 'Error de consulta' . $e->getMessage();
-                            exit();
-                        }
-
-                        $alert = false;
-                        $count = 0;
-                        $plates = array();
-
-                        foreach ($res as $key => $value) {
-                            echo "
-                                <tr class='table-dark'>
-                                    <th scope='row'>$value[0]</th>
-                                    <td>$value[1]</td>
-                                    <td>$value[2]</td>";
-
-                            if($value[3] <= 10){
-                                echo"<td style='color: red !important;'>$value[3]</td>";
-                                $alert = true;
-                                $count = $count + 1;
-                                array_push($plates, $value[1]);
-                            }else{
-                                echo"<td>$value[3]</td>";       
+                            try {
+                                $sql = "SELECT * FROM consuption";
+                                $res = $conexion->query($sql);
+                            } catch (PDOException $e) {
+                                echo 'Error de consulta' . $e->getMessage();
+                                exit();
                             }
-                            echo "</tr>";
-                        }
 
-                        if($alert == true){
-                            echo"
-                                <div class='modal fade' id='needToBuy' tabindex='-1' role='dialog' aria-labelledby='needToBuy' aria-hidden='true'>
-                                    <div class='modal-dialog' role='document'>
-                                        <div class='modal-content'>
-                                            <div class='modal-header' id='confirmation'>
-                                                <h5 class='modal-title' >What do we need to replace</h5>
-                                                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                                                <span aria-hidden='true'>&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class='modal-body' id='confirmation'>
-                                                <p>";
+                            foreach ($res as $key => $value) {
+                                $conexionAux = new Conexion();
 
-                                                for($i = 0; $i < $count; $i++){
-                                                    echo "- $plates[$i]<br>";
-                                                }
-                                                    
-                                            echo "</p>
-                                            </div>
-                                            <div class='modal-footer'>
-                                                <button type='button' class='btn btn-primary' data-dismiss='modal'>Yes Sir!</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ";
+                                try {
+                                    $sqlAux = "SELECT name FROM plates WHERE id LIKE '$value[1]'";
+                                    $resAux = $conexionAux->query($sqlAux);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
+
+                                $name = "";
+                                foreach ($resAux as $key => $val) {
+                                    $name = $val[0];
+                                }
+
+
+                                $status = "";
+                                if(($value[2] == "") || ($value[2] == null)){
+                                    $status = "Green";
+                                    
+                                }else{
+                                    $status = "Cooked";
+                                }
+
+                                echo "
+                                    <tr class='table-dark' style='max-height: 10px !important;'>  
+                                        <td>$name</td>
+                                        <td>
+                                            <form method='POST' action=''>
+                                                <button type='submit' class='btn btn-danger' style='padding: 0 10px;'>$status</button>
+                                            </form>
+                                        </td>
+                                    </tr>";
+
+                                $conexionAux = null;
+                                $resAux = null;
+                            }
                             
-                            echo "<script language='javascript'>;
-                                    alert('You have some plates that need to be replaced.');
-                                </script>";
-                        }
+                            $conexion = null;
+                            $res = null;
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-                        $conexion = null;
-                        $res = null;
-
-                    ?>
-                </tbody>
-            </table>
-
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#needToBuy" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px; display: block;">To Replace</button>
-            <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Back</button>
-            <form method="POST" action="../php/logoff.php">
-                <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
-            </form>
+        <section class="container" id="whiteContainer">
+                <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; width: 150px;">Back</button>
+                <form method="POST" action="../php/logoff.php">
+                    <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
+                </form>
+            </div>
         </section>
     </div>
 

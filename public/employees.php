@@ -92,7 +92,7 @@
             <div>
                 <a href="./orders.php"><h1 class="linksEmployees">ORDERS</h1></a>
 
-                <a href=""><h1 class="linksEmployees">KITCHEN</h1></a>
+                <a href="./kitchen.php"><h1 class="linksEmployees">KITCHEN</h1></a>
 
                 <a href="./storage.php"><h1 class="linksEmployees">STORAGE</h1></a>
             </div>

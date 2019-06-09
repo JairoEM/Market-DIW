@@ -154,8 +154,9 @@ $(document).ready(function(){
     });
 
     $(".buttonID").click(function(){
-        $("#idUpdated").val("" + this.id);
+        $(".idUpdated").val("" + this.id);
         $("#createOrder").hide(1000);
         $("#showOrders").hide(1000);
+        $(".tabContent").show(1000);
     });
 });

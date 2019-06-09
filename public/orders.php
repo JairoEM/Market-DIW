@@ -150,8 +150,8 @@
 
                                 foreach ($res as $key => $value) {
                                     echo "
-                                        <tr class='table-dark' style='max-height: 10px !important;'>
-                                            <th scope='row'>$value[0]</th>
+                                        <tr class='table-dark'>
+                                            <td scope='row'>$value[0]</td>
                                             <td>$value[3]</td>
                                             <td>$value[4]</td>
                                             <td><button type='button' class='btn btn-primary buttonID' id='$value[0]' style='padding: 0 10px;'>Select</button></td>
@@ -160,6 +160,9 @@
                                     array_push($obtainOrder, $value[0]);
                                     $count++;
                                 }
+
+                                $conexion = null;
+                                $res = null;
                             ?>
                         </tbody>
                     </table>
@@ -167,45 +170,301 @@
             </div>
         </section>
         
-        <section class="container" id="whiteContainer" style="">
-            <p>All the plates will be added to <input type="text" id="idUpdated" readonly style="background: none; border: 0;"></span></p>
+        <section class="container tabContent" id="whiteContainer" style="display: none;">
+            <p>All the plates will be added to <input type="text" class="idUpdated" name="idUpdated" readonly style="background: none; border: 0;"></p>
             <div class="contentWC">
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs" style="background:rgba(255,255,255, 0.3);">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ENTRANTS</a>
+                        <a class="nav-link" href="#eP" role="tab" aria-selected="true" data-toggle="tab" style="color: black !important;">ENTRANTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">MAIN DISHES</a>
+                        <a class="nav-link" href="#mdP" role="tab" aria-selected="false" data-toggle="tab" style="color: black !important;">MAIN DISHES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">SIDE DISHES</a>
+                        <a class="nav-link" href="#sdP" role="tab" aria-selected="false" data-toggle="tab" style="color: black !important;">SIDE DISHES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">VEGAN BURGERS</a>
+                        <a class="nav-link" href="#vbP" role="tab" aria-selected="false" data-toggle="tab" style="color: black !important;">VEGAN BURGERS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">DESSERTS</a>
+                        <a class="nav-link" href="#dP" role="tab" aria-selected="false" data-toggle="tab" style="color: black !important;">DESSERTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">DRINKS</a>
+                        <a class="nav-link" href="#xP" role="tab" aria-selected="false" data-toggle="tab" style="color: black !important;">DRINKS</a>
                     </li>
                 </ul>
             </div>
 
-            <!-- MAIN DISHES -->
+            <div class="tab-content">
+                <!-- ENTRANTS DISHES -->
+                <div id="eP" class="tab-pane fade show active" role="tabpanel">
+                    <table class="table table-hover">
+                        <tbody>
+                            <!-- PHP TABLE -->
+                            <?php
+                                $conexion = new Conexion();
+                                $count = 1;
+                                $name = 'E';
 
-            <!-- SIDE DISHES -->
+                                try {
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'E%'";
+                                    $res = $conexion->query($sql);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
 
-            <!-- VEGAN BURGERS -->
+                                foreach ($res as $key => $value) {
+                                    $fullName = $name . strval($count);
 
-            <!-- DESSERTS -->
+                                    echo "
+                                        <tr class='table-dark' style='max-height: 10px !important;'>
+                                            <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td>$value[1]</td>
+                                                <td>$value[2]$</td>
+                                                <td>      
+                                                    <input type='text' class='idUpdated' name='idUpdated' readonly style='display: none;'>
+                                                    <button type='submit' class='btn btn-primary' style='padding: 0 10px;'>ADD</button>
+                                                </td>
+                                            </form>
+                                        </tr>";
+                                    $count++;
+                                }
+                                
+                                $conexion = null;
+                                $res = null;
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
 
-            <!-- DRINKS -->
-            
-            <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Back</button>
-            <form method="POST" action="../php/logoff.php">
-                <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
-            </form>
+                <!-- MAIN DISHES -->
+                <div id="mdP" class="tab-pane fade" role="tabpanel">
+                    <table class="table table-hover">
+                        <tbody>
+                            <!-- PHP TABLE -->
+                            <?php
+                                $conexion = new Conexion();
+                                $count = 1;
+                                $name = 'M';
+
+                                try {
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'M%'";
+                                    $res = $conexion->query($sql);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
+
+                                foreach ($res as $key => $value) {
+                                    $fullName = $name . strval($count);
+
+                                    echo "
+                                        <tr class='table-dark' style='max-height: 10px !important;'>
+                                            <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td>$value[1]</td>
+                                                <td>$value[2]$</td>
+                                                <td>      
+                                                    <input type='text' class='idUpdated' name='idUpdated' readonly style='display: none;'>
+                                                    <button type='submit' class='btn btn-primary' style='padding: 0 10px;'>ADD</button>
+                                                </td>
+                                            </form>
+                                        </tr>";
+                                    $count++;
+                                }
+                                
+                                $conexion = null;
+                                $res = null;
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- SIDE DISHES -->
+                <div id="sdP" class="tab-pane fade" role="tabpanel">
+                    <table class="table table-hover">
+                        <tbody>
+                            <!-- PHP TABLE -->
+                            <?php
+                                $conexion = new Conexion();
+                                $count = 1;
+                                $name = 'S';
+
+                                try {
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'S%'";
+                                    $res = $conexion->query($sql);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
+
+                                foreach ($res as $key => $value) {
+                                    $fullName = $name . strval($count);
+
+                                    echo "
+                                        <tr class='table-dark' style='max-height: 10px !important;'>
+                                            <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td>$value[1]</td>
+                                                <td>$value[2]$</td>
+                                                <td>      
+                                                    <input type='text' class='idUpdated' name='idUpdated' readonly style='display: none;'>
+                                                    <button type='submit' class='btn btn-primary' style='padding: 0 10px;'>ADD</button>
+                                                </td>
+                                            </form>
+                                        </tr>";
+                                    $count++;
+                                }
+                                
+                                $conexion = null;
+                                $res = null;
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- VEGAN BURGERS -->
+                <div id="vbP" class="tab-pane fade" role="tabpanel">
+                    <table class="table table-hover">
+                        <tbody>
+                            <!-- PHP TABLE -->
+                            <?php
+                                $conexion = new Conexion();
+                                $count = 1;
+                                $name = 'V';
+
+                                try {
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'V%'";
+                                    $res = $conexion->query($sql);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
+
+                                foreach ($res as $key => $value) {
+                                    $fullName = $name . strval($count);
+
+                                    echo "
+                                        <tr class='table-dark' style='max-height: 10px !important;'>
+                                            <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td>$value[1]</td>
+                                                <td>$value[2]$</td>
+                                                <td>      
+                                                    <input type='text' class='idUpdated' name='idUpdated' readonly style='display: none;'>
+                                                    <button type='submit' class='btn btn-primary' style='padding: 0 10px;'>ADD</button>
+                                                </td>
+                                            </form>
+                                        </tr>";
+                                    $count++;
+                                }
+                                
+                                $conexion = null;
+                                $res = null;
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- DESSERTS -->
+                <div id="dP" class="tab-pane fade" role="tabpanel">
+                    <table class="table table-hover">
+                        <tbody>
+                            <!-- PHP TABLE -->
+                            <?php
+                                $conexion = new Conexion();
+                                $count = 1;
+                                $name = 'D';
+
+                                try {
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'D%'";
+                                    $res = $conexion->query($sql);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
+
+                                foreach ($res as $key => $value) {
+                                    $fullName = $name . strval($count);
+
+                                    echo "
+                                        <tr class='table-dark' style='max-height: 10px !important;'>
+                                            <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td>$value[1]</td>
+                                                <td>$value[2]$</td>
+                                                <td>      
+                                                    <input type='text' class='idUpdated' name='idUpdated' readonly style='display: none;'>
+                                                    <button type='submit' class='btn btn-primary' style='padding: 0 10px;'>ADD</button>
+                                                </td>
+                                            </form>
+                                        </tr>";
+                                    $count++;
+                                }
+                                
+                                $conexion = null;
+                                $res = null;
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- DRINKS -->
+                <div id="xP" class="tab-pane fade" role="tabpanel">
+                    <table class="table table-hover">
+                        <tbody>
+                            <!-- PHP TABLE -->
+                            <?php
+                                $conexion = new Conexion();
+                                $count = 1;
+                                $name = 'X';
+
+                                try {
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'X%'";
+                                    $res = $conexion->query($sql);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
+
+                                foreach ($res as $key => $value) {
+                                    $fullName = $name . strval($count);
+
+                                    echo "
+                                        <tr class='table-dark' style='max-height: 10px !important;'>
+                                            <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td>$value[1]</td>
+                                                <td>$value[2]$</td>
+                                                <td>      
+                                                    <input type='text' class='idUpdated' name='idUpdated' readonly style='display: none;'>
+                                                    <button type='submit' class='btn btn-primary' style='padding: 0 10px;'>ADD</button>
+                                                </td>
+                                            </form>
+                                        </tr>";
+                                    $count++;
+                                }
+                                
+                                $conexion = null;
+                                $res = null;
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+
+            <!-- IFRAME AUX -->
+            <iframe name="iFrameAux" style="display:none;"></iframe>
+        </section>
+
+        <section class="container" id="whiteContainer">
+                <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Back</button>
+                <form method="POST" action="../php/logoff.php">
+                    <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
+                </form>
+            </div>
         </section>
     </div>
 
