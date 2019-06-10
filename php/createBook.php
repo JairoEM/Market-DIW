@@ -4,7 +4,12 @@
     $customer = $_POST["customerName"];
     $waiter = $_POST["waiterID"];
     $table = $_POST["tableNumber"];
-    $hour = date("D M d, Y G:i");
+    $hour = $_POST["hourBook"];
+
+    // Check if hour is empty
+    if(($hour == "") || ($hour == null)){
+        $hour = date("d-m H:i");
+    }
 
     function assign_rand_value($num) {
         switch($num) {
@@ -65,10 +70,10 @@
 
     $conexion = new Conexion();
     
-    // Look if there is any other customer with the same book id
+    // Look if there is any other booking with the same id
     for($i = 0; $i <= 100; $i++){
         try {
-            $sqlAux = "SELECT * FROM booking WHERE ID LIKE $idBooking;";
+            $sqlAux = "SELECT * FROM booking WHERE ID LIKE '$idBooking';";
             $resAux = $conexion->query($sqlAux);
         } catch (PDOException $e) {
             echo 'There is no other booking with the same ID' . $e->getMessage();
@@ -76,16 +81,33 @@
         }
 
         $idBooking = get_rand_alphanumeric(4);
-    }
+
+        $resAux = null;
+    };
+
+    // Look if there is any other bill with the same id
+    for($i = 0; $i <= 100; $i++){
+        try {
+            $sqlAux = "SELECT * FROM bill WHERE ID LIKE '$billID';";
+            $resAux = $conexion->query($sqlAux);
+        } catch (PDOException $e) {
+            echo 'There is no other booking with the same ID' . $e->getMessage();
+            break;
+        }
+
+        $idBooking = get_rand_alphanumeric(4);
+
+        $resAux = null;
+    };
 
     // Look for the waiter ID, if its correct, it continues
     try {
-        $sqlAuxB = "SELECT * FROM employees WHERE ID LIKE $waiter;";
-        $resAuxB = $conexion->query($sqlAuxB);
+        $sqlAux = "SELECT * FROM employees WHERE ID LIKE '$waiter';";
+        $resAux = $conexion->query($sqlAux);
     } catch (PDOException $e) {
         echo "Error de consulta";
         exit;    
-    }    
+    };    
 
     if(($sqlAuxB == null) || ($sqlAuxB == "")){
         try {
@@ -105,7 +127,7 @@
         }
     }else{
         echo "<script>alert('Wrong Waiter ID');</script>";
-    }
+    };
 
     $conexion = null;
     $res = null;

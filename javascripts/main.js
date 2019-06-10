@@ -142,7 +142,7 @@ $(document).ready(function(){
         location.href = "./employees.php";
     });
 
-    // Function to show the differents kind of playes on "orders.php"
+    // Functions to show the differents kind of playes on "orders.php"
     $("#newOrder").click(function(){
         $("#createOrder").show(1000);
         $("#showOrders").hide(1000);
@@ -159,4 +159,42 @@ $(document).ready(function(){
         $("#showOrders").hide(1000);
         $(".tabContent").show(1000);
     });
+
+    // Functions to show the plates of different status
+    $("#showAll").click(function(){
+        $("#needToCook").show(1000);
+        $("#alreadyDone").show(1000);
+    });
+
+    $("#showCookeds").click(function(){
+        $("#needToCook").hide(1000);
+        $("#alreadyDone").show(1000);
+    });
+
+    $("#showGreens").click(function(){
+        $("#needToCook").show(1000);
+        $("#alreadyDone").hide(1000);
+    });
+    
+    // Function to make a form works into a dialog (NOT WORKING)
+    // function submitForm(){
+    //     $.ajax({
+    //        type: "POST",
+    //        url: "../php/changeStatus.php",
+    //        cache:false,
+    //        data: $('form#changeForm').serialize(),
+    //        success: function(response){
+    //            $("#contact").html(response);
+    //            $("#changeDialog").modal('hide');
+    //        },
+    //        error: function(){
+    //            alert("Error");
+    //        }
+    //    });
+    // };
+
+    // $("#changeForm").submit(function(event){
+    //     submitForm();
+    //     return false;
+    // });
 });

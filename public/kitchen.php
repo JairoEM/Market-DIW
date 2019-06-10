@@ -88,13 +88,29 @@
     <!-- DIV WITH BACKGROUNB IMAGE -->
     <div class="container-fluid" id="bg" style="min-height: 600px;">
         <section class="container" id="whiteContainer">
+
             <div class="contentWC">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4" style="text-align: center;">
+                        <button type="button" class="btn btn-secondary" style="color: black !important; width: 80%;" id="showGreens">SHOW GREENS</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-4" style="text-align: center;">
+                        <button type="button" class="btn btn-secondary" style="color: black !important; width: 80%;" id="showCookeds">SHOW COOKEDS</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-4" style="text-align: center;">
+                        <button type="button" class="btn btn-secondary" style="color: black !important; width: 80%;" id="showAll">SHOW ALL</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contentWC" id="needToCook">
+                <h1 style="text-align: center;">NEED TO COOK</h1>
                 <table class="table table-hover">
                     <tbody>
                         <thead>
                             <tr>
                                 <th scope="col">Plate</th>
-                                <th scope="col">Estatus</th>
+                                <th scope="col">Status</th>
                             </tr>
                         </thead>
 
@@ -104,8 +120,10 @@
                         
                             $conexion = new Conexion();
 
+                            $date = date("d/m/y");
+
                             try {
-                                $sql = "SELECT * FROM consuption";
+                                $sql = "SELECT * FROM consuption WHERE state LIKE 'green' AND day LIKE '$date' ORDER BY hour;";
                                 $res = $conexion->query($sql);
                             } catch (PDOException $e) {
                                 echo 'Error de consulta' . $e->getMessage();
@@ -116,7 +134,7 @@
                                 $conexionAux = new Conexion();
 
                                 try {
-                                    $sqlAux = "SELECT name FROM plates WHERE id LIKE '$value[1]'";
+                                    $sqlAux = "SELECT name FROM plates WHERE id LIKE '$value[2]';";
                                     $resAux = $conexionAux->query($sqlAux);
                                 } catch (PDOException $e) {
                                     echo 'Error de consulta' . $e->getMessage();
@@ -128,21 +146,20 @@
                                     $name = $val[0];
                                 }
 
-
-                                $status = "";
-                                if(($value[2] == "") || ($value[2] == null)){
-                                    $status = "Green";
-                                    
+                                if($value[3] == "green"){
+                                    $class = "btn-danger";
                                 }else{
-                                    $status = "Cooked";
+                                    $class = "btn-success";
                                 }
 
                                 echo "
                                     <tr class='table-dark' style='max-height: 10px !important;'>  
                                         <td>$name</td>
                                         <td>
-                                            <form method='POST' action=''>
-                                                <button type='submit' class='btn btn-danger' style='padding: 0 10px;'>$status</button>
+                                            <form method='POST' action='../php/changeStatus.php'>
+                                                <input type='text' name='idConsuption' readonly style='display: none;' value='$value[0]'>
+                                                <input type='text' name='stateConsuption' readonly style='display: none;' value='$value[3]'>
+                                                <button type='submit' class='btn $class' style='padding: 0 10px;'>$value[3]</button>
                                             </form>
                                         </td>
                                     </tr>";
@@ -157,14 +174,83 @@
                     </tbody>
                 </table>
             </div>
-        </section>
 
-        <section class="container" id="whiteContainer">
-                <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; width: 150px;">Back</button>
-                <form method="POST" action="../php/logoff.php">
-                    <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
-                </form>
+            <div class="contentWC" id="alreadyDone">
+                <h1 style="text-align: center;">ALREADY DONE</h1>
+                <table class="table table-hover">
+                    <tbody>
+                        <thead>
+                            <tr>
+                                <th scope="col">Plate</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+
+                        <!-- PHP TABLE -->
+                        <?php
+                            $conexion = new Conexion();
+
+                            $date = date("d/m/y");
+                        
+                            try {
+                                $sql = "SELECT * FROM consuption WHERE state LIKE 'cooked' AND day LIKE '$date' ORDER BY hour;";
+                                $res = $conexion->query($sql);
+                            } catch (PDOException $e) {
+                                echo 'Error de consulta' . $e->getMessage();
+                                exit();
+                            }
+
+                            foreach ($res as $key => $value) {
+                                $conexionAux = new Conexion();
+
+                                try {
+                                    $sqlAux = "SELECT name FROM plates WHERE id LIKE '$value[2]';";
+                                    $resAux = $conexionAux->query($sqlAux);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
+
+                                $name = "";
+                                foreach ($resAux as $key => $val) {
+                                    $name = $val[0];
+                                }
+
+                                if($value[3] == "green"){
+                                    $class = "btn-danger";
+                                }else{
+                                    $class = "btn-success";
+                                }
+
+                                echo "
+                                    <tr class='table-dark' style='max-height: 10px !important;'>  
+                                        <td>$name</td>
+                                        <td>
+                                            <form method='POST' action='../php/changeStatus.php'>
+                                                <input type='text' name='idConsuption' readonly style='display: none;' value='$value[0]'>
+                                                <input type='text' name='stateConsuption' readonly style='display: none;' value='$value[3]'>
+                                                <button type='submit' class='btn $class' style='padding: 0 10px;'>$value[3]</button>
+                                            </form>
+                                        </td>
+                                    </tr>";
+
+                                $conexionAux = null;
+                                $resAux = null;
+                            }
+                            
+                            $conexion = null;
+                            $res = null;
+                        ?>
+                    </tbody>
+                </table>
             </div>
+
+            <!-- IFRAME AUX -->
+            <iframe name="iFrameAux" style="display:none;"></iframe>
+            <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; width: 150px; margin-top: 40px;">Back</button>
+            <form method="POST" action="../php/logoff.php">
+                <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
+            </form>
         </section>
     </div>
 
@@ -200,6 +286,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();
+    </script>
+
+    <!-- Script to reload the page if there is no activity on it -->
+    <script>
+        var time = new Date().getTime();
+        
+        $(document.body).bind("mousemove keypress", function(e) {
+            time = new Date().getTime();
+        });
+
+        function refresh() {
+            if(new Date().getTime() - time >= 60000) 
+                window.location.reload(true);
+            else 
+                setTimeout(refresh, 10000);
+        }
+
+        setTimeout(refresh, 10000);
     </script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

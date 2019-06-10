@@ -91,15 +91,15 @@
             <div class="contentWC">
                 <div class="row">
                     <div class="col-6">
-                        <button type="button" class="btn btn-outline-secondary" id="newOrder">NEW ORDER</button>
+                        <button type="button" class="btn btn-outline-secondary" id="newOrder">NEW BOOK</button>
                     </div>
                     <div class="col-6">
-                        <button type="button" class="btn btn-outline-secondary" id="oldOrder">OLD ORDER</button>
+                        <button type="button" class="btn btn-outline-secondary" id="oldOrder">OLD BOOK</button>
                     </div>
                 </div>
 
                 <div class="row" id="createOrder" style="width: 300px; margin: 40px auto 0; display: none;">
-                    <form action="../php/createOrder.php" method="POST">
+                    <form action="../php/createBook.php" method="POST">
                         <div class="form-group">
                             <label for="customerName">Customer Name</label>
                             <input type="text" class="form-control" id="customerName" name="customerName" style="width: 300px; color: black !important;">
@@ -108,6 +108,12 @@
                         <div class="form-group">
                             <label for="waiterID">Waiter ID</label>
                             <input type="text" class="form-control" id="waiterID" name="waiterID" style="color: black !important;" placeholder="<?php echo $_SESSION['username']; ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hourBook">Date of the book</label>
+                            <input type="text" class="form-control" id="hourBook" name="hourBook" style="color: black !important;" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012]) ([01]?[0-9]{1}|2[0-3]{1}):[0-5]{1}[0-9]{1}" placeholder="00-00 00:00">
+                            <small style="font-size: 0.6em;">Let it empty if you are doing the book now</small>
                         </div>
 
                         <div class="form-group">

@@ -144,3 +144,33 @@ button {
     font-size: 3em;
     text-align: center;
 }
+
+/* -------------------- QUERIES -------------------- */
+
+@media (max-width: 990px){
+    #showAll {
+        height: 90px;
+    }
+    
+    #showCookeds {
+        height: 90px;
+    }
+    
+    #showGreens{
+        height: 90px;
+    }
+}
+
+@media (max-width: 574px){
+    #showAll {
+        height: auto;
+    }
+    
+    #showCookeds {
+        height: auto;
+    }
+    
+    #showGreens{
+        height: auto;
+    }
+}
