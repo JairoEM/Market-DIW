@@ -107,9 +107,11 @@
     } catch (PDOException $e) {
         echo "Error de consulta";
         exit;    
-    };    
+    }
+    
+    
 
-    if(($sqlAuxB == null) || ($sqlAuxB == "")){
+    if(($resAux != null) && ($resAux != "")){
         try {
             $sql = "INSERT INTO booking VALUES ('$idBooking','$waiter',$table,'$customer','$hour');";
             $res = $conexion->query($sql);

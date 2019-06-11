@@ -144,7 +144,6 @@
 
                                 $conexion = new Conexion();
                                 $obtainOrder = array();
-                                $count = 0;
                     
                                 try {
                                     $sql = "SELECT * FROM booking";
@@ -154,17 +153,31 @@
                                     exit();
                                 }
 
+                                $dateAux = "";
+                                $today = "";
                                 foreach ($res as $key => $value) {
-                                    echo "
-                                        <tr class='table-dark'>
-                                            <td scope='row'>$value[0]</td>
-                                            <td>$value[3]</td>
-                                            <td>$value[4]</td>
-                                            <td><button type='button' class='btn btn-primary buttonID' id='$value[0]' style='padding: 0 10px;'>Select</button></td>
-                                        </tr>";
-                                    
-                                    array_push($obtainOrder, $value[0]);
-                                    $count++;
+                                    $dateAux = substr($value[4], 0, -6);
+                                    $today = date("d-m");
+
+                                    if($dateAux == $today){
+                                        try {
+                                            $sql = "SELECT * FROM booking WHERE hour LIKE '$value[4]'";
+                                            $res = $conexion->query($sql);
+                                        } catch (PDOException $e) {
+                                            echo 'Error de consulta' . $e->getMessage();
+                                            exit();
+                                        }
+
+                                        foreach ($res as $key => $value) {
+                                            echo "
+                                                <tr class='table-dark'>
+                                                    <td scope='row'>$value[0]</td>
+                                                    <td>$value[3]</td>
+                                                    <td>$value[4]</td>
+                                                    <td><button type='button' class='btn btn-primary buttonID' id='$value[0]' style='padding: 0 10px;'>Select</button></td>
+                                                </tr>";
+                                        }
+                                    }
                                 }
 
                                 $conexion = null;
@@ -213,7 +226,7 @@
                                 $name = 'E';
 
                                 try {
-                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'E%'";
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'E%' AND quantity >= 1;";
                                     $res = $conexion->query($sql);
                                 } catch (PDOException $e) {
                                     echo 'Error de consulta' . $e->getMessage();
@@ -225,7 +238,7 @@
 
                                     echo "
                                         <tr class='table-dark' style='max-height: 10px !important;'>
-                                            <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
+                                            <form method='POST' action='../php/addOrder.php' target='#iFrameAux'>
                                                 <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
                                                 <td>$value[1]</td>
                                                 <td>$value[2]$</td>
@@ -256,7 +269,7 @@
                                 $name = 'M';
 
                                 try {
-                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'M%'";
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'M%' AND quantity >= 1;";
                                     $res = $conexion->query($sql);
                                 } catch (PDOException $e) {
                                     echo 'Error de consulta' . $e->getMessage();
@@ -299,7 +312,7 @@
                                 $name = 'S';
 
                                 try {
-                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'S%'";
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'S%' AND quantity >= 1;";
                                     $res = $conexion->query($sql);
                                 } catch (PDOException $e) {
                                     echo 'Error de consulta' . $e->getMessage();
@@ -342,7 +355,7 @@
                                 $name = 'V';
 
                                 try {
-                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'V%'";
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'V%' AND quantity >= 1;";
                                     $res = $conexion->query($sql);
                                 } catch (PDOException $e) {
                                     echo 'Error de consulta' . $e->getMessage();
@@ -385,7 +398,7 @@
                                 $name = 'D';
 
                                 try {
-                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'D%'";
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'D%' AND quantity >= 1;";
                                     $res = $conexion->query($sql);
                                 } catch (PDOException $e) {
                                     echo 'Error de consulta' . $e->getMessage();
@@ -428,7 +441,7 @@
                                 $name = 'X';
 
                                 try {
-                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'X%'";
+                                    $sql = "SELECT * FROM plates WHERE ID LIKE 'X%' AND quantity >= 1;";
                                     $res = $conexion->query($sql);
                                 } catch (PDOException $e) {
                                     echo 'Error de consulta' . $e->getMessage();

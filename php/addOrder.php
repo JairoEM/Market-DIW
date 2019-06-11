@@ -87,6 +87,30 @@
         exit();
     }
 
+    try {
+        $sql = "SELECT * FROM plates WHERE ID LIKE '$idPlate';";
+        $res = $conexion->query($sql);
+    } catch (PDOException $e) {
+        echo 'Error de consulta' . $e->getMessage();
+        exit();
+    }
+
+    $countPlate = 0;
+    foreach ($res as $key => $value) {
+        $countPlate = $value[3];
+    }
+    $countPlate--;
+
+    try {
+        $sql = "UPDATE plates SET quantity = $countPlate WHERE ID LIKE '$idPlate';";
+        $res = $conexion->query($sql);
+    } catch (PDOException $e) {
+        echo 'Error de consulta' . $e->getMessage();
+        exit();
+    }   
+
     $conexion = null;
     $res = null;
+
+    header("refresh:10; ../public/orders.php");
 ?>

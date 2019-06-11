@@ -109,8 +109,9 @@
                     <tbody>
                         <thead>
                             <tr>
-                                <th scope="col">Plate</th>
-                                <th scope="col">Status</th>
+                                <th scope="col" width="350px">Plate</th>
+                                <th scope="col">Table</th>
+                                <th scope="col" width="250px">Status</th>
                             </tr>
                         </thead>
 
@@ -152,9 +153,23 @@
                                     $class = "btn-success";
                                 }
 
+                                try {
+                                    $sqlAux = "SELECT * FROM booking WHERE ID LIKE '$value[1]';";
+                                    $resAux = $conexionAux->query($sqlAux);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
+
+                                $table = "b";
+                                foreach ($resAux as $key => $val) {
+                                    $table = $val[2];
+                                }
+
                                 echo "
                                     <tr class='table-dark' style='max-height: 10px !important;'>  
                                         <td>$name</td>
+                                        <td>$table</td>
                                         <td>
                                             <form method='POST' action='../php/changeStatus.php'>
                                                 <input type='text' name='idConsuption' readonly style='display: none;' value='$value[0]'>
@@ -181,8 +196,9 @@
                     <tbody>
                         <thead>
                             <tr>
-                                <th scope="col">Plate</th>
-                                <th scope="col">Status</th>
+                                <th scope="col" width="350px">Plate</th>
+                                <th scope="col">Table</th>
+                                <th scope="col" width="250px">Status</th>
                             </tr>
                         </thead>
 
@@ -222,9 +238,23 @@
                                     $class = "btn-success";
                                 }
 
+                                try {
+                                    $sqlAux = "SELECT * FROM booking WHERE ID LIKE '$value[1]';";
+                                    $resAux = $conexionAux->query($sqlAux);
+                                } catch (PDOException $e) {
+                                    echo 'Error de consulta' . $e->getMessage();
+                                    exit();
+                                }
+
+                                $table = "b";
+                                foreach ($resAux as $key => $val) {
+                                    $table = $val[2];
+                                }
+
                                 echo "
                                     <tr class='table-dark' style='max-height: 10px !important;'>  
                                         <td>$name</td>
+                                        <td>$table</td>
                                         <td>
                                             <form method='POST' action='../php/changeStatus.php'>
                                                 <input type='text' name='idConsuption' readonly style='display: none;' value='$value[0]'>
