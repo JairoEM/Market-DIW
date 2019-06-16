@@ -76,6 +76,9 @@
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="./location.html">Location</a>
                 </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="./logInEmployees.php">Employees</a>
+                </li>
             </ul>
 
             <!-- THAT BUTTON MAY HAVE THE OPTION TO CHANGE THE LANGUAGE -->
@@ -111,7 +114,8 @@
                             <tr>
                                 <th scope="col" width="350px">Plate</th>
                                 <th scope="col">Table</th>
-                                <th scope="col" width="250px">Status</th>
+                                <th scope="col" width="150px">Status</th>
+                                <th scope="col" width="150px"></th>
                             </tr>
                         </thead>
 
@@ -175,6 +179,13 @@
                                                 <input type='text' name='idConsuption' readonly style='display: none;' value='$value[0]'>
                                                 <input type='text' name='stateConsuption' readonly style='display: none;' value='$value[3]'>
                                                 <button type='submit' class='btn $class' style='padding: 0 10px;'>$value[3]</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form method='POST' action='../php/deleteConsuption.php'>
+                                                <input type='text' name='idConsuption' readonly style='display: none;' value='$value[0]'>
+                                                <input type='text' name='idPlate' readonly style='display: none;' value='$value[2]'>
+                                                <button type='submit' class='btn btn-warning' style='padding: 0 10px;'>Delete</button>
                                             </form>
                                         </td>
                                     </tr>";
@@ -277,6 +288,7 @@
 
             <!-- IFRAME AUX -->
             <iframe name="iFrameAux" style="display:none;"></iframe>
+            
             <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; width: 150px; margin-top: 40px;">Back</button>
             <form method="POST" action="../php/logoff.php">
                 <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>

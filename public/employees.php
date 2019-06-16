@@ -1,9 +1,9 @@
 <?php
-    // session_start();
+    session_start();
 
-    // if(!isset($_SESSION['loggedin'])) { 
-    //     header('Location: ./errorEmployees.php');
-    // }          
+    if(!isset($_SESSION['loggedin'])) { 
+        header('Location: ./errorEmployees.php');
+    }          
 ?>
 
 <!doctype html>
@@ -71,10 +71,13 @@
                     <a class="nav-link" href="./gallery.html">Gallery</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./opinions.html">Opinions</a>
+                    <a class="nav-link" href="./opinions.php">Opinions</a>
                 </li>
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="./location.html">Location</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="./logInEmployees.php">Employees</a>
                 </li>
             </ul>
 
@@ -95,10 +98,12 @@
                 <a href="./kitchen.php"><h1 class="linksEmployees">KITCHEN</h1></a>
 
                 <a href="./storage.php"><h1 class="linksEmployees">STORAGE</h1></a>
+
+                <a href="./bills.php"><h1 class="linksEmployees">BILLS</h1></a>
             </div>
 
             <form method="POST" action="../php/logoff.php">
-                <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; float: right; margin-top: 300px;">Log Off</button>
+                <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; float: right; margin-top: 250px;">Log Off</button>
             </form>
         </section>
     </div>

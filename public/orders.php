@@ -76,6 +76,9 @@
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="./location.html">Location</a>
                 </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="./logInEmployees.php">Employees</a>
+                </li>
             </ul>
 
             <!-- THAT BUTTON MAY HAVE THE OPTION TO CHANGE THE LANGUAGE -->
@@ -222,8 +225,6 @@
                             <!-- PHP TABLE -->
                             <?php
                                 $conexion = new Conexion();
-                                $count = 1;
-                                $name = 'E';
 
                                 try {
                                     $sql = "SELECT * FROM plates WHERE ID LIKE 'E%' AND quantity >= 1;";
@@ -234,12 +235,10 @@
                                 }
 
                                 foreach ($res as $key => $value) {
-                                    $fullName = $name . strval($count);
-
                                     echo "
                                         <tr class='table-dark' style='max-height: 10px !important;'>
-                                            <form method='POST' action='../php/addOrder.php' target='#iFrameAux'>
-                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                            <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$value[0]' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
                                                 <td>$value[1]</td>
                                                 <td>$value[2]$</td>
                                                 <td>      
@@ -248,7 +247,6 @@
                                                 </td>
                                             </form>
                                         </tr>";
-                                    $count++;
                                 }
                                 
                                 $conexion = null;
@@ -265,8 +263,6 @@
                             <!-- PHP TABLE -->
                             <?php
                                 $conexion = new Conexion();
-                                $count = 1;
-                                $name = 'M';
 
                                 try {
                                     $sql = "SELECT * FROM plates WHERE ID LIKE 'M%' AND quantity >= 1;";
@@ -277,12 +273,10 @@
                                 }
 
                                 foreach ($res as $key => $value) {
-                                    $fullName = $name . strval($count);
-
                                     echo "
                                         <tr class='table-dark' style='max-height: 10px !important;'>
                                             <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
-                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$value[0]' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
                                                 <td>$value[1]</td>
                                                 <td>$value[2]$</td>
                                                 <td>      
@@ -291,7 +285,6 @@
                                                 </td>
                                             </form>
                                         </tr>";
-                                    $count++;
                                 }
                                 
                                 $conexion = null;
@@ -308,8 +301,6 @@
                             <!-- PHP TABLE -->
                             <?php
                                 $conexion = new Conexion();
-                                $count = 1;
-                                $name = 'S';
 
                                 try {
                                     $sql = "SELECT * FROM plates WHERE ID LIKE 'S%' AND quantity >= 1;";
@@ -320,12 +311,10 @@
                                 }
 
                                 foreach ($res as $key => $value) {
-                                    $fullName = $name . strval($count);
-
                                     echo "
                                         <tr class='table-dark' style='max-height: 10px !important;'>
                                             <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
-                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$value[0]' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
                                                 <td>$value[1]</td>
                                                 <td>$value[2]$</td>
                                                 <td>      
@@ -334,7 +323,6 @@
                                                 </td>
                                             </form>
                                         </tr>";
-                                    $count++;
                                 }
                                 
                                 $conexion = null;
@@ -351,8 +339,6 @@
                             <!-- PHP TABLE -->
                             <?php
                                 $conexion = new Conexion();
-                                $count = 1;
-                                $name = 'V';
 
                                 try {
                                     $sql = "SELECT * FROM plates WHERE ID LIKE 'V%' AND quantity >= 1;";
@@ -363,12 +349,10 @@
                                 }
 
                                 foreach ($res as $key => $value) {
-                                    $fullName = $name . strval($count);
-
                                     echo "
                                         <tr class='table-dark' style='max-height: 10px !important;'>
                                             <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
-                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$value[0]' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
                                                 <td>$value[1]</td>
                                                 <td>$value[2]$</td>
                                                 <td>      
@@ -377,7 +361,6 @@
                                                 </td>
                                             </form>
                                         </tr>";
-                                    $count++;
                                 }
                                 
                                 $conexion = null;
@@ -394,8 +377,6 @@
                             <!-- PHP TABLE -->
                             <?php
                                 $conexion = new Conexion();
-                                $count = 1;
-                                $name = 'D';
 
                                 try {
                                     $sql = "SELECT * FROM plates WHERE ID LIKE 'D%' AND quantity >= 1;";
@@ -406,12 +387,10 @@
                                 }
 
                                 foreach ($res as $key => $value) {
-                                    $fullName = $name . strval($count);
-
                                     echo "
                                         <tr class='table-dark' style='max-height: 10px !important;'>
                                             <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
-                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$value[0]' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
                                                 <td>$value[1]</td>
                                                 <td>$value[2]$</td>
                                                 <td>      
@@ -420,7 +399,6 @@
                                                 </td>
                                             </form>
                                         </tr>";
-                                    $count++;
                                 }
                                 
                                 $conexion = null;
@@ -437,8 +415,6 @@
                             <!-- PHP TABLE -->
                             <?php
                                 $conexion = new Conexion();
-                                $count = 1;
-                                $name = 'X';
 
                                 try {
                                     $sql = "SELECT * FROM plates WHERE ID LIKE 'X%' AND quantity >= 1;";
@@ -449,12 +425,10 @@
                                 }
 
                                 foreach ($res as $key => $value) {
-                                    $fullName = $name . strval($count);
-
                                     echo "
                                         <tr class='table-dark' style='max-height: 10px !important;'>
                                             <form method='POST' action='../php/addOrder.php' target='iFrameAux'>
-                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$fullName' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
+                                                <td scope='row' id='idPlate' width='20px'><input type='text' readonly value='$value[0]' name='idPlate' readonly style='background: none; border: 0; color: black !important;'></td>
                                                 <td>$value[1]</td>
                                                 <td>$value[2]$</td>
                                                 <td>      
@@ -463,7 +437,6 @@
                                                 </td>
                                             </form>
                                         </tr>";
-                                    $count++;
                                 }
                                 
                                 $conexion = null;
@@ -479,11 +452,10 @@
         </section>
 
         <section class="container" id="whiteContainer">
-                <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Back</button>
-                <form method="POST" action="../php/logoff.php">
-                    <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
-                </form>
-            </div>
+            <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Back</button>
+            <form method="POST" action="../php/logoff.php">
+                <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
+            </form>
         </section>
     </div>
 

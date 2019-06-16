@@ -197,4 +197,15 @@ $(document).ready(function(){
     //     submitForm();
     //     return false;
     // });
+
+    // Function to make the submit button on bills show the iframe of the bill
+    $("#billSubmit").click(function(){
+        $("#iFrameBillDiv").show();
+    });
+
+    // Script to print only the iFrameBill in case we press the print button
+    $("#buttonPrint").click(function(){
+        window.frames["iFrameBill"].focus();
+        window.frames["iFrameBill"].print();
+    });
 });

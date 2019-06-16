@@ -3,7 +3,6 @@
 
     $idC = $_POST["idConsuption"];
     $stateC = $_POST["stateConsuption"];
-    echo $stateC;
     
     if($stateC ==  "green"){
         $changeTo = "cooked";

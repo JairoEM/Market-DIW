@@ -5,6 +5,6 @@
     
     session_destroy();
     
-    header("Location: ./employees.php");
+    header("Location: ../public/logInEmployees.php");
     exit;
 ?>

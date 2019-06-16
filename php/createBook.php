@@ -6,6 +6,8 @@
     $table = $_POST["tableNumber"];
     $hour = $_POST["hourBook"];
 
+    $conexion = new Conexion();
+
     // Check if hour is empty
     if(($hour == "") || ($hour == null)){
         $hour = date("d-m H:i");
@@ -67,8 +69,6 @@
 
     $idBooking = get_rand_alphanumeric(4);
     $billID = get_rand_alphanumeric(6);
-
-    $conexion = new Conexion();
     
     // Look if there is any other booking with the same id
     for($i = 0; $i <= 100; $i++){
@@ -121,7 +121,7 @@
         }
     
         try {
-            $sql = "INSERT INTO bill VALUES ('$billID','$idBooking',0);";
+            $sql = "INSERT INTO bill VALUES ('$billID','$idBooking',0, 'not');";
             $res = $conexion->query($sql);
         } catch (PDOException $e) {
             echo 'Error de consulta' . $e->getMessage();

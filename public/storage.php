@@ -1,9 +1,9 @@
 <?php
-    // session_start();
+    session_start();
 
-    // if(!isset($_SESSION['loggedin'])) { 
-    //     header('Location: ./errorEmployees.php');
-    // }          
+    if(!isset($_SESSION['loggedin'])) { 
+        header('Location: ./errorEmployees.php');
+    }          
 ?>
 
 <!doctype html>
@@ -71,10 +71,13 @@
                     <a class="nav-link" href="./gallery.html">Gallery</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./opinions.html">Opinions</a>
+                    <a class="nav-link" href="./opinions.php">Opinions</a>
                 </li>
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="./location.html">Location</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="./logInEmployees.php">Employees</a>
                 </li>
             </ul>
 

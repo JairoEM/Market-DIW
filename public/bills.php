@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['loggedin'])) { 
+        header('Location: ./errorEmployees.php');
+    }          
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="shortcut icon" href="../logoDark.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="shortcut icon" href="./logoDark.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.css">
@@ -17,17 +25,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <title>Green Town - Localización</title>
+    <title>Green Town - Log In</title>
   </head>
   <body>
     <section id="header">
         <div class="bg-primary" style="text-align: center; height: 120px;">
-            <img src="../../assets/greenTownTop.png" alt="" style="padding: 20px 0;">
+            <img src="../assets/greenTownTop.png" alt="" style="padding: 20px 0;">
         </div>
     </section>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <a class="navbar-brand" href="./inicio.html">
+        <a class="navbar-brand" href="../index.html">
             <!-- <img src="./assets/logo.png" alt="" id="imgLogo" style="height:60px;"> -->
             Green Town
         </a>
@@ -38,85 +46,81 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./menu.html">Menú</a>
+                    <a class="nav-link breadcrumb-item active" href="./menu.html">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./reservas.html">Reservas</a>
+                    <a class="nav-link" href="./bookATable.html">Book a Table</a>
                 </li>
                 <li class="nav-item dropdown">
                     <div class="d-none d-lg-block">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Sobre nosotros
+                            About us
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="confirmation">
-                            <a class="dropdown-item" href="./galeria.html">Galería</a>
-                            <a class="dropdown-item" href="./opiniones.html">Opiniones</a>
-                            <a class="dropdown-item" href="#">Localización</a>
+                            <a class="dropdown-item" href="./gallery.html">Gallery</a>
+                            <a class="dropdown-item" href="./opinions.php">Opinions</a>
+                            <a class="dropdown-item" href="./location.html">Location</a>
+                            <a class="dropdown-item" href="">Employees</a>
                         </div>
                     </div>
                 </li>
 
                 <!-- NAVBAR ITEMS FOR MOBILE AND TABLET -->
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./galeria.html">Galería</a>
+                    <a class="nav-link" href="./gallery.html">Gallery</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./opiniones.html">Opiniones</a>
+                    <a class="nav-link" href="./opinions.php">Opinions</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="#">Localización</a>
+                    <a class="nav-link" href="./location.html">Location</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="">Employees</a>
                 </li>
             </ul>
 
             <!-- THAT BUTTON MAY HAVE THE OPTION TO CHANGE THE LANGUAGE -->
             <br>
-            <a href="../location.html" style="color:white;"><u>ENG</u></a> / <a href="#"style="color:white;"><u>ESP</u></a>
+            <a href="#" style="color:white;"><u>ENG</u></a> / <a href=""style="color:white;"><u>ESP</u></a>
             <br>
         </div>
     </nav>
-    
+
     <!-- DIV WITH BACKGROUNB IMAGE -->
-    <div class="container-fluid" id="bg">
-
-        <!-- INTRO LOCATION -->
-        <section class="container" id="whiteContainer">
-            <div class="row justify-content-center" id="contentWC">
-                <div class="col-auto" id="centerText">
-                    <h1>Donde puedes encontrarnos</h1>
+    <div class="container-fluid" id="bg" style="min-height: 70vh;">
+        <section  class="container" id="introEmployees">
+            <div id="contentWC">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h2>Choose the booking</h2>
+                    <small>Choose one of the following options</small>
                 </div>
-            </div>
-            <div id="contentWC" style="text-align: center;">
-                <p>
-                    Si quieres venir a conocernos, o volver a visitarnos, 
-                    nos encontramos en el 445 de Mount Eden Road, Mount Eden, 
-                    Auckland, a 100 metros de la galería de arte Glifford y a 
-                    500 metros del Mount Eden Summit.
-                </p>
+                
 
-                <p>
-                    Recuerda que también puedes reservar una hora en cualquier 
-                    momento y para cualquier ocasión en nuestra sección "<a href="./reservas.html">reservas</a>".
-                </p>
+                <form action="../php/getBill.php" method="POST" target="iFrameBill">
+                    <label for="nameCustomer" class="labelBills">Write the name of the customer:</label>
+                    <input type="text" name="nameCustomer" id="nameCustomer" class="inputBills">
+                    <br>
+                    <label for="idCustomer" class="labelBills">Write the ID of the booking:</label>
+                    <input type="text" name="idCustomer" id="idCustomer" class="inputBills">
+                    <input type="submit" value="Enter" id="billSubmit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 10px; width: 150px; display: block;">
+                </form>
 
-                <p>
-                    También puedes ponerte en contacto por teléfono al
-                    <a href="tel: 00 64 9 123 4567">00 64 9 123 4567</a> 
-                    o hablar con nosotros en nuestras redes sociales.            
-                </p>
+                <div id="iFrameBillDiv" style="display: none;" class="row justify-content-center">
+                    <div class="col-auto">
+                        <iframe name="iFrameBill" frameborder="0" style="width: 325px; height: 600px !important; margin: 0 auto;" id="iFrameBill" src="getBill.php"></iframe>
+                        <button style="background: none; border: none;" id="buttonPrint">
+                            <img src="../assets/print.png" alt="" style="width: 40px !important; height: auto; margin-top: -20px;">
+                        </button>
+                    </div>
+                </div>
 
-                <p>
-                    <span><img src="../../assets/twitter.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"></span>
-                    <span><img src="../../assets/instagram.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"></span>
-                    <span><img src="../../assets/facebook.svg" alt="" style="height: 50px; width: auto; padding: 5px 0;"> </span> 
-                </p>
-            </div>
-        </section>
-
-        <!-- MAP -->
-        <section class="container-fluid" style="padding: 0; margin: 0;">
-            <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3191.3401575068074!2d174.75979531571107!3d-36.88220997993183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d4632b3e7d2c3%3A0xcccf9d03ee62e7f!2s445+Mount+Eden+Rd%2C+Mount+Eden%2C+Auckland+1024%2C+Nueva+Zelanda!5e0!3m2!1ses!2ses!4v1548937658200" 
-                width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+                <div>
+                    <button id="backEmployees" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; width: 150px; margin-top: 40px;">Back</button>
+                    <form method="POST" action="../php/logoff.php">
+                        <button type="submit" class="btn btn-secondary" style="color: rgb(44, 43, 43) !important; margin-top: 20px; width: 150px;">Log Off</button>
+                    </form>
+                </div>
             </div>
         </section>
     </div>
@@ -126,21 +130,21 @@
         <div class="container" style="padding: auto;">
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-12 col-lg-2" style="padding-bottom: 20px;" id="centerText">
-                    <img src="../../assets/greenTownBottom.png" style="height: 80px;" alt=""></span>
+                    <img src="../assets/greenTownBottom.png" style="height: 80px;" alt=""></span>
                 </div>
                 <div class="col-12 col-lg-6 offset-lg-1" style="padding-bottom: 20px;" id="centerText">
                     &copy; Green Town - Gastro Restaurant
                     <div class="w-100"></div>
                     445 Mount Eden Road, Mount Eden, Auckland // ZIP 5022
                     <div class="w-100"></div>
-                    <span><img src="../../assets/phone.svg" alt="" height="16px" width="auto"></span> 00 64 9 123 4567
+                    <span><img src="../assets/phone.svg" alt="" height="16px" width="auto"></span> 00 64 9 123 4567
                 </div>
                 <div class="col-12 col-lg-2 offset-lg-1" style="padding-bottom: 20px;" id="centerText">
                     <div class="row">
                         <div class="col-12">
-                            <img src="../../assets/twitter.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
-                            <img src="../../assets/instagram.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
-                            <img src="../../assets/facebook.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">                            
+                            <img src="../assets/twitter.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
+                            <img src="../assets/instagram.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">
+                            <img src="../assets/facebook.svg" alt="" style="height: 30px; width: auto; padding: 0 5px;">                            
                         </div>
                     </div>
                 </div>
@@ -149,7 +153,7 @@
     </section>
 
     <!-- Optional JavaScript -->
-    <script src="../../javascripts/main.js"></script>
+    <script src="../javascripts/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();

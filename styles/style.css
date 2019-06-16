@@ -145,6 +145,17 @@ button {
     text-align: center;
 }
 
+.labelBills {
+    width: 95%;
+    max-width: 350px;
+}
+
+.inputBills {
+    width: 95%;
+    max-width: 350px;
+    color: black !important;
+}
+
 /* -------------------- QUERIES -------------------- */
 
 @media (max-width: 990px){

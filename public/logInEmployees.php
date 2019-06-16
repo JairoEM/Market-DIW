@@ -63,10 +63,13 @@
                     <a class="nav-link" href="./gallery.html">Gallery</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="./opinions.html">Opinions</a>
+                    <a class="nav-link" href="./opinions.php">Opinions</a>
                 </li>
                 <li class="nav-item d-lg-none">
                     <a class="nav-link" href="./location.html">Location</a>
+                </li>
+                <li class="nav-item d-lg-none">
+                    <a class="nav-link" href="">Employees</a>
                 </li>
             </ul>
 
@@ -88,20 +91,17 @@
             </div>
 
             <form method="POST" action="../php/conection.php">
-                <div class="form-group">
+                <div class="form-group" style="text-align: center;">
                     <label for="exampleInputPassword1">ID</label>
-                    <input type="text" class="form-control" name="employeeID" placeholder="ID" style="color: rgb(44, 43, 43) !important;">
+                    <input type="text" class="form-control" name="employeeID" placeholder="ID" style="color: rgb(44, 43, 43) !important; max-width: 300px; margin: 0 auto 15px;">
 
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" name="employeePass" placeholder="Password" style="color: rgb(44, 43, 43) !important;">
+                    <input type="password" class="form-control" name="employeePass" placeholder="Password" style="color: rgb(44, 43, 43) !important; max-width: 300px; margin: 0 auto 15px;">
                 </div>
+                
                 <!-- No puede ser type="submit" porque entonces recarga la página -->
-                <button type="submit" class="btn btn-secondary" id="verEmployees" style="color: rgb(44, 43, 43) !important;">Enter</button>
+                <button type="submit" class="btn btn-secondary" id="verEmployees" style="color: rgb(44, 43, 43) !important; display: block; margin: 15px auto 15px;">Enter</button>
             </form>
-        </section>
-        
-        <section class="container" id="contenidoEmployees">
-
         </section>
     </div>
 
